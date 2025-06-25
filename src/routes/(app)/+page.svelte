@@ -204,22 +204,22 @@
 			class="bg-bg border-border flex flex-col gap-[10px] rounded-lg border p-[10px]"
 		>
 			<a
-				class="bg-bg-light grid flex-1 place-content-center rounded-lg text-center text-2xl"
+				class="bg-bg-light grid flex-1 place-content-center rounded-lg text-center text-2xl hover:opacity-50"
 				href="/projects">Projects</a
 			>
 			<a
-				class="bg-bg-light grid flex-1 place-content-center rounded-lg text-center text-2xl"
-				href="/homelab">Homelab</a
+				class="bg-bg-light grid flex-1 place-content-center rounded-lg text-center text-2xl hover:opacity-50"
+				href="/homelab"><span class="line-through">Homelab</span><span class="text-text-muted text-md">work in progress</span></a
 			>
 			<a
-				class="bg-bg-light grid flex-1 place-content-center rounded-lg text-center text-2xl"
+				class="bg-bg-light grid flex-1 place-content-center rounded-lg text-center text-2xl hover:opacity-50"
 				href="/cv">CV</a
 			>
 		</div>
 		<div class="bg-bg border-border rounded-lg border p-[10px]"></div>
 		<div class="bg-bg border-border grid gap-[10px] rounded-lg border p-[10px]">
 			<a
-				class="bg-bg-light text-1xl text-text flex items-center gap-1 rounded-lg px-2 pb-1 pt-2 text-center"
+				class="bg-bg-light text-1xl text-text flex items-center gap-1 rounded-lg px-2 pb-1 pt-2 text-center hover:opacity-50"
 				href="https://drigster.dev"
 				><House class="mb-1" size="26" /><span class="text-text-muted"
 					>drigster.dev</span
@@ -233,14 +233,14 @@
 			>
 			<span class="text-1xl flex items-center gap-2 text-center">
 				<a
-					class="bg-bg-light text-text flex h-full flex-1 items-center gap-1 rounded-lg px-2 pb-1 pt-2"
+					class="bg-bg-light text-text flex h-full flex-1 items-center gap-1 rounded-lg px-2 pb-1 pt-2 hover:opacity-50"
 					href="mailto:me@drigster.dev"
 					><Mail class="mb-1" size="26" /><span class="text-text-muted"
 						>me@drigster.dev</span
 					></a
 				>
 				<button
-					class="bg-bg-light text-text hidden aspect-square h-full place-content-center rounded-lg"
+					class="bg-bg-light text-text hidden aspect-square h-full place-content-center rounded-lg hover:opacity-50"
 					onclick={() => copyEmail("me@drigster.dev")}
 					bind:this={copyEmailButton}
 				>
@@ -252,14 +252,14 @@
 				</button>
 			</span>
 			<a
-				class="bg-bg-light text-1xl text-text flex items-center gap-1 rounded-lg px-2 pb-1 pt-2 text-center"
+				class="bg-bg-light text-1xl text-text flex items-center gap-1 rounded-lg px-2 pb-1 pt-2 text-center hover:opacity-50"
 				href="https://github.com/drigster"
 				><Github class="mb-1" size="26" /><span class="text-text-muted"
 					>@drigster</span
 				></a
 			>
 			<a
-				class="bg-bg-light text-1xl text-text flex items-center gap-1 rounded-lg px-2 pb-1 pt-2 text-center"
+				class="bg-bg-light text-1xl text-text flex items-center gap-1 rounded-lg px-2 pb-1 pt-2 text-center hover:opacity-50"
 				href="https://linkedin.com/in/drigster/"
 				><Linkedin class="mb-1" size="26" /><span class="text-text-muted"
 					>@drigster</span

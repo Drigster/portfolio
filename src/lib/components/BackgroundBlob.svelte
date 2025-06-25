@@ -19,8 +19,8 @@
 		position: absolute;
 		top: var(--fromTop);
 		left: var(--fromLeft);
-		width: 16rem;
-		height: 16rem;
+		width: 12rem;
+		height: 12rem;
 		background: radial-gradient(circle, var(--color) 15%, rgba(0, 0, 0, 0) 75%);
 		transform: translate(-50%, -50%);
 		transition: all 200ms linear;

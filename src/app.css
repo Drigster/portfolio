@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+				--background-dark: #000000;
+				--background: hsl(0 0 10);
+				--background-light: #262626;
+				--accent: #008B8B;
+				--text: #F2F2F2;
+				--text-muted: #BFBFBF;
+				--border: #262626;
+    }
+}
+
+@font-face {
+    font-family: 'Aldrich';
+    font-style: normal;
+    src: url('/fonts/Aldrich-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-display: normal;
+}
+  
+body {
+  font-family: "Aldrich";
+	background: #111111;
+	color: white;
+  box-sizing: border-box;
+}
+
+@media print {
+  @page {
+    margin: 0;
+    size: A4;
+  }
+  body * {
+    visibility: hidden;
+  }
+  #print-section, #print-section * {
+    visibility: visible;
+  }
+  #print-section {
+    position: absolute;
+    left: 0;
+    top: 0;
+    max-width: none;
+    -webkit-print-color-adjust: exact !important;   /* Chrome, Safari 6 – 15.3, Edge */
+    color-adjust: exact !important;                 /* Firefox 48 – 96 */
+    print-color-adjust: exact !important;           /* Firefox 97+, Safari 15.4+ */
+  }
+  #print-section * {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}

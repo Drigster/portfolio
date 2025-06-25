@@ -1,0 +1,29 @@
+<script lang="ts">
+	let { color } = $props();
+	let x = $state(-100);
+	let y = $state(-100);
+
+	export function onMouseMove(e: MouseEvent) {
+		x = e.clientX;
+		y = e.clientY;
+	}
+</script>
+
+<div
+	class="blob"
+	style="--fromTop: {y}px;--fromLeft: {x}px; --color: {color};"
+></div>
+
+<style>
+	.blob {
+		position: absolute;
+		top: var(--fromTop);
+		left: var(--fromLeft);
+		width: 16rem;
+		height: 16rem;
+		background: radial-gradient(circle, var(--color) 15%, rgba(0, 0, 0, 0) 75%);
+		transform: translate(-50%, -50%);
+		transition: all 200ms linear;
+		z-index: -10;
+	}
+</style>

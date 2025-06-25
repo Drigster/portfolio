@@ -2,7 +2,6 @@
 	import rack from "$lib/assets/rack.png";
 	import router from "$lib/assets/router.png";
 	import server from "$lib/assets/server.png";
-	import { trpc } from "$lib/trpc";
 </script>
 
 <div class="grid h-96 grid-cols-2 content-center items-center">

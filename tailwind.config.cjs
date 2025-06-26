@@ -11,6 +11,9 @@ module.exports = {
 				"text": "var(--text)",
 				"text-muted": "var(--text-muted)",
 				"border": "var(--border)"
+			},
+			screens: {
+				'md2': '950px',
 			}
 		},
 	},

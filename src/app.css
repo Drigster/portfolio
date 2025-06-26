@@ -41,7 +41,7 @@ body {
     visibility: visible;
   }
   #print-section {
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;
     max-width: none;
@@ -53,4 +53,8 @@ body {
     break-inside: avoid;
     page-break-inside: avoid;
   }
+}
+
+.scroll-thin {
+  scrollbar-width: thin;
 }

@@ -1,16 +1,16 @@
 <script lang="ts">
-	let { color } = $props();
+	let { color, class: className }: { color: string; class?: string } = $props();
 	let x = $state(-100);
 	let y = $state(-100);
 
 	export function onMouseMove(e: MouseEvent) {
-		x = e.clientX;
-		y = e.clientY;
+		x = e.pageX;
+		y = e.pageY;
 	}
 </script>
 
 <div
-	class="blob"
+	class="blob {className}"
 	style="--fromTop: {y}px;--fromLeft: {x}px; --color: {color};"
 ></div>
 

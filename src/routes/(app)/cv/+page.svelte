@@ -281,8 +281,7 @@
 									<div class="flex items-center gap-0.5">
 										<Cube class="inline" size="14" />
 										<span>Rust;</span>
-										<span>Vue;</span>
-										<span>Tauri</span>
+										<span>Freya</span>
 									</div>
 								</div>
 							</div>
@@ -298,7 +297,8 @@
 									</div>
 									<div class="flex items-center gap-0.5">
 										<Cube class="inline" size="14" />
-										<span>Svelte</span>
+										<span>Svelte;</span>
+										<span>tRPC</span>
 									</div>
 								</div>
 							</div>

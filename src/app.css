@@ -22,7 +22,7 @@
     font-display: normal;
 }
 html, body, .background {
-  min-width: 100vh;
+  min-width: 100vw;
   min-height: 100svh;
 }
 body {

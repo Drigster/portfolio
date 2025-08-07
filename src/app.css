@@ -27,6 +27,7 @@ body {
 	background: #111111;
 	color: white;
   box-sizing: border-box;
+  font-size: clamp(14px, 0.95vw, 18px);
 }
 
 @media print {

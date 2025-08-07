@@ -32,6 +32,7 @@
 	class="grid auto-rows-[max-content] md2:auto-rows-fr grid-cols-1 md:grid-cols-2 md2:grid-cols-1 content mx-auto gap-4 p-4"
 >
 	<Project
+		id="taskupeatus"
 		title="TaskuPeatus"
 		description="TaskuPeats is a phone app for public transport users in Tallinn. It uses
 				GPS and public APIs to show users when transport on the closest stops
@@ -41,6 +42,7 @@
 		sourceUrl="https://github.com/drigster/taskupeatus"
 	/>
 	<Project
+		id="foxytown"
 		title="foxy.town"
 		description="Foxy.town is a website for my minecraft. It has user registration and
 				managment, allowing users to change all the info about theit character.
@@ -52,6 +54,7 @@
 		sourceUrl="https://github.com/drigster/minecraftsitev4"
 	/>
 	<Project
+		id="portfolio"
 		title="Protfolio"
 		description="This website."
 		technologies={["SvelteKit", "TypeScript"]}
@@ -60,6 +63,7 @@
 		sourceUrl="https://github.com/drigster/portfolio"
 	/>
 	<Project
+		id="marmakc"
 		title="Marmakc.com"
 		description="Website for a electrical panel manufacturing company. Has a simple admin
 				panel that allows adding products and changing contact information."

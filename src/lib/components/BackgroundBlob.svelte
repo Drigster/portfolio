@@ -23,7 +23,7 @@
 		height: 12rem;
 		background: radial-gradient(circle, var(--color) 15%, rgba(0, 0, 0, 0) 75%);
 		transform: translate(-50%, -50%);
-		transition: all 200ms linear;
+		transition: all 50ms linear;
 		z-index: -10;
 	}
 </style>

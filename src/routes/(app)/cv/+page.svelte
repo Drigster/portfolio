@@ -9,13 +9,12 @@
 		ServerStack,
 		CpuChip,
 		Square3Stack3d,
-		Briefcase,
 		Cube,
 		Printer,
 	} from "@o7/icon/heroicons/solid";
 	import { Github, LinkedinBox } from "@o7/icon/remix/solid";
 	import SidebarItem from "./SidebarItem.svelte";
-	import Raiting from "./Raiting.svelte";
+	import Raiting from "$lib/components/Raiting.svelte";
 	import MainItem from "./MainItem.svelte";
 	import { page } from "$app/state";
 
@@ -107,6 +106,9 @@
 								</li>
 								<li>
 									<Raiting title="TypeScript" rating={4} size={"1em"} />
+								</li>
+								<li>
+									<Raiting title="Svelte" rating={4} size={"1em"} />
 								</li>
 								<li>
 									<Raiting title="C#" rating={4} size={"1em"} />

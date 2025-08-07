@@ -1,5 +1,6 @@
 <script lang="ts">
 	let {
+		id,
 		title,
 		description,
 		technologies,
@@ -8,6 +9,7 @@
 		url,
 		sourceUrl,
 	}: {
+		id: string;
 		title: string;
 		description: string;
 		technologies: string[];
@@ -19,6 +21,7 @@
 </script>
 
 <div
+	{id}
 	class="flex flex-col row-span-2 grid-rows-subgrid md:grid md:gap-0 md2:row-span-1 md2:grid-cols-2 md2:gap-4"
 >
 	<div

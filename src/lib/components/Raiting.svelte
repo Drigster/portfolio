@@ -3,14 +3,22 @@
 		title,
 		rating,
 		size,
-	}: { title: string; rating: number; size: string | number } = $props();
+		class: className,
+	}: {
+		title?: string;
+		rating: number;
+		size: string | number;
+		class?: string;
+	} = $props();
 	if (!Number.isNaN(Number(size))) {
-		size = size + 'px';
+		size = size + "px";
 	}
 </script>
 
-<div class="flex items-center justify-between gap-1">
-	<span class="font-bold">{title}</span>
+<div class="{className} flex items-center justify-between gap-1">
+	{#if title != undefined}
+		<span class="font-bold">{title}</span>
+	{/if}
 	<span class="flex items-center gap-1">
 		{#each Array(7) as _, i}
 			{#if i < rating}

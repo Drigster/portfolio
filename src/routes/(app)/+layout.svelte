@@ -6,7 +6,7 @@
 </script>
 
 <div
-	class="background relative grid place-content-center overflow-hidden"
+	class="background relative grid content-start justify-center overflow-hidden"
 	aria-hidden="true"
 	onmousemove={blob?.onMouseMove}
 >

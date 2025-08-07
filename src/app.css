@@ -21,7 +21,10 @@
     font-weight: normal;
     font-display: normal;
 }
-  
+html, body, .background {
+  min-width: 100vh;
+  min-height: 100svh;
+}
 body {
   font-family: "Aldrich";
 	background: #111111;

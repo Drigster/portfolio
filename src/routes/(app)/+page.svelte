@@ -124,7 +124,6 @@
 			id="typescript"
 			title="Typescript"
 			type="Language"
-			1920x1080
 			rating={4}
 			links={[
 				"/portfolio#foxytown",

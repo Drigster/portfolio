@@ -1,4 +1,6 @@
 <script lang="ts">
+	import ZoomableImage from "$lib/components/ZoomableImage.svelte";
+
 	let {
 		id,
 		title,
@@ -25,13 +27,9 @@
 	class="flex flex-col row-span-2 grid-rows-subgrid md:grid md:gap-0 md2:row-span-1 md2:grid-cols-2 md2:gap-4"
 >
 	<div
-		class="rounded-t-lg md2:rounded-lg aspect-[16/9] w-full h-full bg-bg border border-border overflow-x-hidden overflow-y-scroll flex items-baseline justify-center"
+		class="rounded-t-lg md2:rounded-lg aspect-[16/9] w-full h-full bg-bg border border-border"
 	>
-		<img
-			class={imageScroll ? "w-full h-auto" : "w-auto h-full"}
-			src={image}
-			alt=""
-		/>
+		<ZoomableImage scrollable={imageScroll} src={image} alt="" />
 	</div>
 	<div
 		class="bg-bg border border-border p-4 rounded-b-lg md2:rounded-lg flex flex-col gap-3 md2:aspect-[16/9]"

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Link } from "@o7/icon/lucide";
-	import type { Component } from "svelte";
+	import type { Component, Snippet } from "svelte";
 	import Raiting from "./Raiting.svelte";
 
 	let {
@@ -8,17 +8,15 @@
 		title,
 		type,
 		rating,
-		links,
-		linkTitles,
 		icon: Icon,
+		children,
 	}: {
 		id: string;
 		title: string;
 		type: string;
 		rating: number;
-		links: string[];
-		linkTitles: string[];
 		icon: Component;
+		children?: Snippet;
 	} = $props();
 </script>
 
@@ -38,19 +36,9 @@
 		<Raiting class="ml-2" {rating} size={10} />
 	</div>
 	<div class="px-1 h-full py-2 border-b mx-4">
-		<span>Projects:</span>
-		<ul class="project-list">
-			{#each links as link, i}
-				<li>
-					<a
-						class="text-text hover:text-text-muted flex items-center gap-1"
-						href={link}
-					>
-						{linkTitles[i]}<Link size="12" />
-					</a>
-				</li>
-			{/each}
-		</ul>
+		{#if children}
+			{@render children()}
+		{/if}
 	</div>
 	<div class="flex items-end justify-center mx-4">
 		<label for={id} class="p-3 cursor-pointer text-text hover:text-text-muted"

@@ -10,6 +10,7 @@
 		MapPin,
 		Linkedin,
 		Calendar,
+		Link,
 	} from "@o7/icon/lucide";
 	import { copyText } from "$lib/util";
 	import { onMount } from "svelte";
@@ -51,7 +52,7 @@
 </svelte:head>
 
 <div
-	class="grid md2:aspect-square md2:h-svh md2:grid-cols-3 md2:grid-rows-3 gap-4 p-4"
+	class="grid aspect-square h-[calc(100svh-0.25rem)] grid-cols-3 grid-rows-3 gap-4 p-4 max-w-screen min-w-0 min-h-0 mx-auto"
 >
 	<div class="min-h-72 md2:col-span-2 flex flex-col gap-4">
 		<div class="bg-bg border-border rounded-lg border px-2 pt-2">
@@ -112,99 +113,158 @@
 			title="Svelte"
 			type="Framework"
 			rating={4}
-			links={[
-				"/portfolio#foxytown",
-				"/portfolio#portfolio",
-				"/portfolio#marmakc",
-			]}
-			linkTitles={["Foxy.town", "portfolio", "Marmakc.com"]}
 			icon={SvelteIcon}
-		/>
+		>
+			<span>Projects:</span>
+			<ul class="project-list">
+				<li>
+					<a
+						class="text-text hover:text-text-muted flex items-center gap-1"
+						href="/portfolio#foxytown"
+					>
+						Foxy.town<Link size="12" />
+					</a>
+				</li>
+				<li>
+					<a
+						class="text-text hover:text-text-muted flex items-center gap-1"
+						href="/portfolio#portfolio"
+					>
+						Portfolio<Link size="12" />
+					</a>
+				</li>
+				<li>
+					<a
+						class="text-text hover:text-text-muted flex items-center gap-1"
+						href="/portfolio#marmakc"
+					>
+						Marmakc.com<Link size="12" />
+					</a>
+				</li>
+			</ul>
+		</TechCircleItemStats>
 		<TechCircleItemStats
 			id="typescript"
 			title="Typescript"
 			type="Language"
 			rating={4}
-			links={[
-				"/portfolio#foxytown",
-				"/portfolio#portfolio",
-				"/portfolio#marmakc",
-			]}
-			linkTitles={["Foxy.town", "portfolio", "Marmakc.com"]}
 			icon={TypeScriptIcon}
-		/>
+		>
+			<span>Projects:</span>
+			<ul class="project-list">
+				<li>
+					<a
+						class="text-text hover:text-text-muted flex items-center gap-1"
+						href="/portfolio#foxytown"
+					>
+						Foxy.town<Link size="12" />
+					</a>
+				</li>
+				<li>
+					<a
+						class="text-text hover:text-text-muted flex items-center gap-1"
+						href="/portfolio#portfolio"
+					>
+						Portfolio<Link size="12" />
+					</a>
+				</li>
+				<li>
+					<a
+						class="text-text hover:text-text-muted flex items-center gap-1"
+						href="/portfolio#marmakc"
+					>
+						Marmakc.com<Link size="12" />
+					</a>
+				</li>
+			</ul>
+		</TechCircleItemStats>
 		<TechCircleItemStats
 			id="javascript"
 			title="JavaScript"
 			type="Language"
 			rating={4}
-			links={["/portfolio#", "/portfolio#", "/portfolio#"]}
-			linkTitles={["", "", ""]}
 			icon={JavaScriptIcon}
-		/>
+		></TechCircleItemStats>
 		<TechCircleItemStats
 			id="python"
 			title="Python"
 			type="Language"
 			rating={3}
-			links={[]}
-			linkTitles={[]}
 			icon={PythonIcon}
-		/>
+		></TechCircleItemStats>
 		<TechCircleItemStats
 			id="java"
 			title="Java"
 			type="Language"
 			rating={2}
-			links={[]}
-			linkTitles={[]}
 			icon={JavaIcon}
-		/>
+		></TechCircleItemStats>
 		<TechCircleItemStats
 			id="csharp"
 			title="C#"
 			type="Language"
 			rating={4}
-			links={["https://github.com/drigster/projectphoenix/"]}
-			linkTitles={["ProjectPhoenix", "", ""]}
 			icon={CSharpIcon}
-		/>
+		>
+			<span>Projects:</span>
+			<ul class="project-list">
+				<li>
+					<a
+						class="text-text hover:text-text-muted flex items-center gap-1"
+						href="https://github.com/drigster/projectphoenix/"
+					>
+						ProjectPhoenix<Link size="12" />
+					</a>
+				</li>
+			</ul>
+		</TechCircleItemStats>
 		<TechCircleItemStats
 			id="react"
 			title="React"
 			type="Framework"
 			rating={1}
-			links={[]}
-			linkTitles={[]}
 			icon={ReactIcon}
-		/>
+		></TechCircleItemStats>
 		<TechCircleItemStats
 			id="rust"
 			title="Rust"
 			type="Language"
 			rating={3}
-			links={[]}
-			linkTitles={[]}
 			icon={RustIcon}
-		/>
+		></TechCircleItemStats>
 		<TechCircleItemStats
 			id="git"
 			title="Git"
 			type="Technology"
 			rating={5}
-			links={["https://github.com/drigster/"]}
-			linkTitles={["See on github"]}
 			icon={GitIcon}
-		/>
+		>
+			<span>Projects:</span>
+			<ul class="project-list">
+				<li>
+					<a
+						class="text-text hover:text-text-muted flex items-center gap-1"
+						href="https://github.com/drigster/"
+					>
+						See on github<Link size="12" />
+					</a>
+				</li>
+			</ul>
+		</TechCircleItemStats>
 		<TechCircleItemStats
 			id="proxmox"
 			title="Proxmox"
 			type="Technology"
 			rating={2}
-			links={["/homelab"]}
-			linkTitles={["Homelab"]}
 			icon={ProxmoxIcon}
-		/>
+		>
+			<a
+				class="text-text hover:text-text-muted flex items-center gap-1"
+				href="/homelab"
+			>
+				View homelab page<Link size="12" />
+			</a>
+		</TechCircleItemStats>
 	</div>
 	<div
 		class="row-start-2 md2:row-start-auto min-h-72 bg-bg border-border flex flex-col gap-[10px] rounded-lg border p-[10px]"

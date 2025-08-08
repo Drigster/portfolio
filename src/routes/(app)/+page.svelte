@@ -11,6 +11,8 @@
 		Linkedin,
 		Calendar,
 		Link,
+		MousePointerClick,
+		X,
 	} from "@o7/icon/lucide";
 	import { copyText } from "$lib/util";
 	import { onMount } from "svelte";
@@ -26,23 +28,35 @@
 	import PythonIcon from "$lib/components/icons/PythonIcon.svelte";
 	import ProxmoxIcon from "$lib/components/icons/ProxmoxIcon.svelte";
 	import TechCircleItemStats from "$lib/components/TechCircleItemStats.svelte";
+	import { Discord, Game } from "@o7/icon/remix/solid";
 
-	let blob = $state<BackgroundBlob>();
 	let copyEmailButton = $state<HTMLButtonElement>();
-	let copied = $state(false);
+	let emailCopied = $state(false);
+	let copyDiscordButton = $state<HTMLButtonElement>();
+	let discordCopied = $state(false);
 
 	onMount(() => {
-		if (!copyEmailButton) {
-			return;
+		if (copyEmailButton) {
+			copyEmailButton.style.display = "grid";
 		}
-		copyEmailButton.style.display = "grid";
+		if (copyDiscordButton) {
+			copyDiscordButton.style.display = "grid";
+		}
 	});
 
 	function copyEmail(text: string) {
 		copyText(text);
-		copied = true;
+		emailCopied = true;
 		setTimeout(() => {
-			copied = false;
+			emailCopied = false;
+		}, 2000);
+	}
+
+	function copyDiscord(text: string) {
+		copyText(text);
+		discordCopied = true;
+		setTimeout(() => {
+			discordCopied = false;
 		}, 2000);
 	}
 	//	class="grid aspect-square h-screen grid-cols-3 grid-rows-3 gap-fixed-4 p-fixed-4 max-w-screen min-w-0 min-h-0 mx-auto text-clamp-lg"
@@ -74,22 +88,33 @@
 		</div>
 	</div>
 	<div
-		class="overflow-y-scroll overflow-x-hidden hidden md2:block bg-bg border-border relative rounded-fixed-lg border"
+		class="hidden md2:block bg-bg border-border relative rounded-fixed-lg border"
 	>
 		<img class="rounded-[inherit]" src={drigster} alt="Avatar" />
-		<span
-			class="tooltip text-text-muted absolute bottom-0 right-0 cursor-help px-fixed-1"
-		>
-			<span class="opacity-25 text-clamp-sm">Why no real picture?</span>
-			<span class="tooltiptext">
-				I am quite privacy centerd. So I have very little personal information
-				online, including no pictures.
+		<label>
+			<input type="checkbox" hidden />
+			<div
+				class="icon-privacy p-fixed-4 justify-center items-center hidden absolute text-text-muted flex-col inset-0 z-10 bg-[#0000008e] backdrop-blur-sm rounded-lg cursor-pointer"
+			>
+				<span class="absolute top-0 right-0 p-fixed-4"
+					><X class="!w-font-clamp-xl !h-font-clamp-xl" /></span
+				>
+				I am quite privacy centerd. So I have very little personal information online,
+				including no pictures.
+			</div>
+			<span
+				class="absolute bottom-0 right-0 p-fixed-1 opacity-25 text-clamp-sm cursor-pointer"
+			>
+				Why no real picture?
 			</span>
-		</span>
+		</label>
 	</div>
 	<div
 		class="tech-circle-container aspect-square md2:aspect-auto bg-bg border-border relative rounded-fixed-lg border p-fixed-10px"
 	>
+		<span class="absolute right-0 bottom-0 text-text-muted p-2 animate-pulse">
+			<MousePointerClick />
+		</span>
 		<div class="tech-circle h-4/5 w-4/5">
 			<TechCircleItem id="svelte" items={8} position={1} icon={SvelteIcon} />
 			<TechCircleItem
@@ -126,7 +151,8 @@
 				<li>
 					<a
 						class="text-text-muted hover:text-accent flex items-center gap-fixed-1"
-						href="/portfolio#foxytown"
+						href="/projects#foxytown"
+						target="_blank"
 					>
 						Foxy.town<Link size="12" />
 					</a>
@@ -134,7 +160,8 @@
 				<li>
 					<a
 						class="text-text-muted hover:text-accent flex items-center gap-fixed-1"
-						href="/portfolio#portfolio"
+						href="/projects#portfolio"
+						target="_blank"
 					>
 						Portfolio<Link size="12" />
 					</a>
@@ -142,7 +169,8 @@
 				<li>
 					<a
 						class="text-text-muted hover:text-accent flex items-center gap-fixed-1"
-						href="/portfolio#marmakc"
+						href="/projects#marmakc"
+						target="_blank"
 					>
 						Marmakc.com<Link size="12" />
 					</a>
@@ -161,7 +189,8 @@
 				<li>
 					<a
 						class="text-text-muted hover:text-accent flex items-center gap-fixed-1"
-						href="/portfolio#foxytown"
+						href="/projects#foxytown"
+						target="_blank"
 					>
 						Foxy.town<Link size="12" />
 					</a>
@@ -169,7 +198,8 @@
 				<li>
 					<a
 						class="text-text-muted hover:text-accent flex items-center gap-fixed-1"
-						href="/portfolio#portfolio"
+						href="/projects#portfolio"
+						target="_blank"
 					>
 						Portfolio<Link size="12" />
 					</a>
@@ -177,7 +207,8 @@
 				<li>
 					<a
 						class="text-text-muted hover:text-accent flex items-center gap-fixed-1"
-						href="/portfolio#marmakc"
+						href="/projects#marmakc"
+						target="_blank"
 					>
 						Marmakc.com<Link size="12" />
 					</a>
@@ -190,21 +221,78 @@
 			type="Language"
 			rating={4}
 			icon={JavaScriptIcon}
-		></TechCircleItemStats>
+		>
+			<span class="text-text">Projects:</span>
+			<ul class="project-list">
+				<li>
+					<a
+						class="text-text-muted hover:text-accent flex items-center gap-fixed-1"
+						href="https://github.com/drigster/minecraftsitev1/"
+						target="_blank"
+					>
+						MinecraftSiteV1<Link size="12" />
+					</a>
+				</li>
+				<li>
+					<a
+						class="text-text-muted hover:text-accent flex items-center gap-fixed-1"
+						href="https://github.com/DrigsterI/TPTMap/tree/dev/"
+						target="_blank"
+					>
+						TptMap<Link size="12" />
+					</a>
+				</li>
+				<li>
+					<a
+						class="text-text-muted hover:text-accent flex items-center gap-fixed-1"
+						href="https://github.com/drigsterI/margusgame/"
+						target="_blank"
+					>
+						Game(School project)<Link size="12" />
+					</a>
+				</li>
+			</ul>
+		</TechCircleItemStats>
 		<TechCircleItemStats
 			id="python"
 			title="Python"
 			type="Language"
 			rating={3}
 			icon={PythonIcon}
-		></TechCircleItemStats>
+		>
+			<span class="text-text">Projects:</span>
+			<ul class="project-list">
+				<li>
+					<a
+						class="text-text-muted hover:text-accent flex items-center gap-fixed-1"
+						href="https://github.com/drigster/minecraftsitev1"
+						target="_blank"
+					>
+						MinecraftSiteV1<Link size="12" />
+					</a>
+				</li>
+			</ul>
+		</TechCircleItemStats>
 		<TechCircleItemStats
 			id="java"
 			title="Java"
 			type="Language"
 			rating={2}
 			icon={JavaIcon}
-		></TechCircleItemStats>
+		>
+			<span class="text-text">Projects:</span>
+			<ul class="project-list">
+				<li>
+					<a
+						class="text-text-muted hover:text-accent flex items-center gap-fixed-1"
+						href="https://github.com/drigster/lostcities"
+						target="_blank"
+					>
+						LostCities<Link size="12" />
+					</a>
+				</li>
+			</ul>
+		</TechCircleItemStats>
 		<TechCircleItemStats
 			id="csharp"
 			title="C#"
@@ -218,6 +306,7 @@
 					<a
 						class="text-text-muted hover:text-accent flex items-center gap-fixed-1"
 						href="https://github.com/drigster/projectphoenix/"
+						target="_blank"
 					>
 						ProjectPhoenix<Link size="12" />
 					</a>
@@ -230,14 +319,40 @@
 			type="Framework"
 			rating={1}
 			icon={ReactIcon}
-		></TechCircleItemStats>
+		>
+			<span class="text-text">Projects:</span>
+			<ul class="project-list">
+				<li>
+					<a
+						class="text-text-muted hover:text-accent flex items-center gap-fixed-1"
+						href="https://github.com/drigster/minecraftsitev2"
+						target="_blank"
+					>
+						MinecraftSiteV2<Link size="12" />
+					</a>
+				</li>
+			</ul>
+		</TechCircleItemStats>
 		<TechCircleItemStats
 			id="rust"
 			title="Rust"
 			type="Language"
 			rating={3}
 			icon={RustIcon}
-		></TechCircleItemStats>
+		>
+			<span class="text-text">Projects:</span>
+			<ul class="project-list">
+				<li>
+					<a
+						class="text-text-muted hover:text-accent flex items-center gap-fixed-1"
+						href="https://github.com/drigster/tidal-rs"
+						target="_blank"
+					>
+						tidal-rs<Link size="12" />
+					</a>
+				</li>
+			</ul>
+		</TechCircleItemStats>
 		<TechCircleItemStats
 			id="git"
 			title="Git"
@@ -245,14 +360,24 @@
 			rating={5}
 			icon={GitIcon}
 		>
-			<span class="text-text">Projects:</span>
+			<span class="text-text">See on github:</span>
 			<ul class="project-list">
 				<li>
 					<a
 						class="text-text-muted hover:text-accent flex items-center gap-fixed-1"
 						href="https://github.com/drigster/"
+						target="_blank"
 					>
-						See on github<Link size="12" />
+						My main account<Link size="12" />
+					</a>
+				</li>
+				<li>
+					<a
+						class="text-text-muted hover:text-accent flex items-center gap-fixed-1"
+						href="https://github.com/drigsterI/"
+						target="_blank"
+					>
+						My school account<Link size="12" />
 					</a>
 				</li>
 			</ul>
@@ -261,7 +386,7 @@
 			id="proxmox"
 			title="Proxmox"
 			type="Technology"
-			rating={2}
+			rating={3}
 			icon={ProxmoxIcon}
 		>
 			<a
@@ -284,7 +409,7 @@
 		</a>
 		<a class="flex-1" href="/homelab">
 			<button
-				class="w-full h-full bg-bg-light place-content-center rounded-fixed-lg text-center text-clamp-2xl hover:bg-opacity-50 hover:text-accent disabled:line-through disabled:bg-opacity-50"
+				class="w-full h-full bg-bg-light place-content-center rounded-fixed-lg text-center text-clamp-2xl disabled:line-through disabled:bg-opacity-50"
 				disabled={true}
 			>
 				<span>Homelab</span>
@@ -304,29 +429,21 @@
 	<div
 		class="bg-bg border-border grid gap-[1vh] rounded-fixed-lg border p-fixed-10px"
 	>
-		<a href="https://drigster.dev">
-			<button
-				class="w-full h-full bg-bg-light text-clamp-lg text-text-muted flex items-center gap-fixed-1 rounded-fixed-lg px-fixed-2 pb-fixed-1 pt-fixed-2 text-center hover:bg-opacity-50 hover:text-accent"
-			>
-				<House class="mb-fixed-1 !w-font-clamp-lg !h-font-clamp-lg" />
-				<span>drigster.dev</span>
-			</button>
-		</a>
 		<span
 			class="bg-bg-light text-clamp-lg text-text-muted flex items-center gap-fixed-1 rounded-fixed-lg px-fixed-2 pb-fixed-1 pt-fixed-2 text-center"
-			><MapPin class="mb-fixed-1 !w-font-clamp-lg !h-font-clamp-lg" /><span
-				>Tallinn, Estonia</span
-			></span
 		>
+			<MapPin class="mb-fixed-1 !w-font-clamp-lg !h-font-clamp-lg" />
+			<span> Tallinn, Estonia </span>
+		</span>
 		<span class="text-clamp-lg flex items-center gap-fixed-2 text-center">
 			<a class="flex-1 h-full" href="mailto:me@drigster.dev">
 				<button
 					class="text-text-muted text-ellipsis w-full h-full bg-bg-light text-clamp-lg flex items-center gap-fixed-1 rounded-fixed-lg px-fixed-2 pb-fixed-1 pt-fixed-2 text-center hover:bg-opacity-50 hover:text-accent"
 				>
 					<Mail class="mb-fixed-1 !w-font-clamp-lg !h-font-clamp-lg" />
-					<span style="font-size: clamp(1.15vh, 1.125rem, 2.12vh);"
-						>me@drigster.dev</span
-					>
+					<span style="font-size: clamp(1.15vh, 1.125rem, 2.12vh);">
+						me@drigster.dev
+					</span>
 				</button>
 			</a>
 			<button
@@ -334,7 +451,7 @@
 				onclick={() => copyEmail("me@drigster.dev")}
 				bind:this={copyEmailButton}
 			>
-				{#if !copied}
+				{#if !emailCopied}
 					<Copy class="!w-[2.5vh] !h-[2.5vh]" />
 				{:else}
 					<Check class="!w-[2.5vh] !h-[2.5vh]" />
@@ -344,17 +461,38 @@
 		<a
 			class="bg-bg-light text-clamp-lg text-text-muted flex items-center gap-fixed-1 rounded-fixed-lg px-fixed-2 pb-fixed-1 pt-fixed-2 text-center hover:bg-opacity-50 hover:text-accent"
 			href="https://github.com/drigster"
-			><Github class="mb-fixed-1 !w-font-clamp-lg !h-font-clamp-lg" /><span
-				>@drigster</span
-			></a
+			target="_blank"
 		>
+			<Github class="mb-fixed-1 !w-font-clamp-lg !h-font-clamp-lg" />
+			<span>@drigster </span>
+		</a>
 		<a
 			class="bg-bg-light text-clamp-lg text-text-muted flex items-center gap-fixed-1 rounded-fixed-lg px-fixed-2 pb-fixed-1 pt-fixed-2 text-center hover:bg-opacity-50 hover:text-accent"
 			href="https://linkedin.com/in/drigster/"
-			><Linkedin class="mb-fixed-1 !w-font-clamp-lg !h-font-clamp-lg" /><span
-				>@drigster</span
-			></a
+			target="_blank"
 		>
+			<Linkedin class="mb-fixed-1 !w-font-clamp-lg !h-font-clamp-lg" />
+			<span>@drigster </span>
+		</a>
+		<span class="text-clamp-lg flex items-center gap-fixed-2 text-center">
+			<span
+				class="flex-1 h-full bg-bg-light text-clamp-lg text-text-muted flex items-center gap-fixed-1 rounded-fixed-lg px-fixed-2 pb-fixed-1 pt-fixed-2 text-center"
+			>
+				<Discord class="mb-fixed-1 !w-font-clamp-lg !h-font-clamp-lg" />
+				<span>@drigster</span>
+			</span>
+			<button
+				class="bg-bg-light text-text hidden aspect-square h-full place-content-center rounded-fixed-lg hover:bg-opacity-50 hover:text-accent"
+				onclick={() => copyDiscord("@drigster")}
+				bind:this={copyDiscordButton}
+			>
+				{#if !discordCopied}
+					<Copy class="!w-[2.5vh] !h-[2.5vh]" />
+				{:else}
+					<Check class="!w-[2.5vh] !h-[2.5vh]" />
+				{/if}
+			</button>
+		</span>
 	</div>
 	<div
 		class="overflow-y-scroll overflow-x-hidden row-start-5 md2:row-start-auto bg-bg border-border text-text-muted md2:col-span-2 flex flex-col gap-2 rounded-fixed-lg border p-fixed-10px"
@@ -371,11 +509,16 @@
 				</div>
 				<div>
 					<MapPin class="inline !w-font-clamp-lg !h-font-clamp-lg" />
-					<span
-						><a class="hover:text-accent" href="https://tlu.ee/"
-							>University of Tallinn</a
-						>, Estonia</span
-					>
+					<span>
+						<a
+							class="hover:text-accent"
+							href="https://www.tlu.ee/"
+							target="_blank"
+						>
+							University of Tallinn
+						</a>
+						, Estonia
+					</span>
 				</div>
 			</div>
 			<div class="text-text text-end">Bachelor’s in<br /> Computer Science</div>
@@ -388,11 +531,16 @@
 				</div>
 				<div>
 					<MapPin class="inline !w-font-clamp-lg !h-font-clamp-lg" />
-					<span
-						><a class="hover:text-accent" href="https://tptlive.ee/"
-							>Tallinna Polütehnikum</a
-						>, Estonia</span
-					>
+					<span>
+						<a
+							class="hover:text-accent"
+							href="https://tptlive.ee/"
+							target="_blank"
+						>
+							Tallinna Polütehnikum
+						</a>
+						, Estonia
+					</span>
 				</div>
 			</div>
 			<div class="text-text text-end items">
@@ -462,26 +610,10 @@
 		background-color: white;
 	}
 
-	.tooltip .tooltiptext {
-		visibility: hidden;
-		background-color: var(--background);
-		color: var(--text);
-		border-radius: 0.85vh;
-		border: 1px solid var(--border);
-		text-align: center;
-		padding: 0.85vh;
-		position: absolute;
-		z-index: 1;
-		bottom: 125%;
-		inset-inline: 5%;
-		opacity: 0;
-		transition: opacity 0.3s;
+	input:checked ~ .icon-privacy {
+		display: flex;
 	}
 
-	.tooltip:hover .tooltiptext {
-		visibility: visible;
-		opacity: 1;
-	}
 	@property --rot-deg {
 		syntax: "<angle>";
 		initial-value: 0deg;

@@ -32,34 +32,52 @@
 	<title>CV - Gabriel Jõe</title>
 </svelte:head>
 
-<div class="cv flex flex-col items-center justify-center px-4 pb-4">
-	<div class="flex h-20 w-full max-w-[800px] items-center justify-between p-4">
-		<a href="/" class="flex items-center justify-end gap-0.5">
-			<Home class="inline" size="18" />
-			<span>Homepage</span>
-		</a>
-		<div class="flex gap-2">
-			<div>
-				Print style:
-				<div class="dropdown">
-					<button class="dropbtn"
-						>{theme.charAt(0).toUpperCase() + theme.slice(1)}</button
-					>
-					<div class="dropdown-content">
-						<a href="?theme=dark">Dark</a>
-						<a href="?theme=light">Light</a>
-					</div>
-				</div>
-			</div>
+<div
+	class="nav sticky flex gap-2 mt-4 p-2 rounded-lg justify-between bg-bg border border-border mx-auto mb-4 w-screen max-w-[900px]"
+>
+	<div class="flex gap-2 nav">
+		<a href="/">
 			<button
-				onclick={() => window.print()}
-				class="flex items-center justify-end gap-0.5"
+				class="w-full bg-bg-light py-2 px-4 rounded-lg text-xl hover:bg-opacity-50 hover:text-accent"
 			>
-				<Printer class="inline" size="18" />
-				<span>Print<noscript>(CTRL + P)</noscript></span>
+				Home
 			</button>
-		</div>
+		</a>
+		<a href="/homelab">
+			<button
+				class="w-full bg-bg-light py-2 px-4 rounded-lg text-xl disabled:line-through disabled:bg-opacity-50"
+				disabled
+			>
+				Homelab
+			</button>
+		</a>
+		<a href="/projects">
+			<button
+				class="w-full bg-bg-light py-2 px-4 rounded-lg text-xl hover:bg-opacity-50 hover:text-accent"
+			>
+				Projects
+			</button>
+		</a>
 	</div>
+	<span class="nav hidden border-t-2 border-bg-light"></span>
+	<div class="flex gap-2 nav">
+		<a href="/projects">
+			<button
+				class="w-full bg-bg-light py-2 px-4 rounded-lg text-xl hover:bg-opacity-50 hover:text-accent"
+			>
+				Projects
+			</button>
+		</a>
+		<button
+			onclick={() => window.print()}
+			class="w-full bg-bg-light py-2 px-4 rounded-lg text-xl hover:bg-opacity-50 hover:text-accent flex items-center justify-center gap-0.5"
+		>
+			<span>Print<noscript>(CTRL + P)</noscript></span>
+			<Printer class="inline" size="24" />
+		</button>
+	</div>
+</div>
+<div class="cv flex flex-col items-center justify-center px-4 pb-4">
 	<div>
 		<div
 			id="print-section"
@@ -151,7 +169,7 @@
 									<Raiting title="Docker" rating={2} size={"1em"} />
 								</li>
 								<li>
-									<Raiting title="Proxmox" rating={2} size={"1em"} />
+									<Raiting title="Proxmox" rating={3} size={"1em"} />
 								</li>
 							</ul>
 						</div>
@@ -488,5 +506,14 @@
 
 	.dropdown:hover .dropdown-content {
 		display: flex;
+	}
+
+	@media (max-width: 608px) {
+		.nav {
+			flex-direction: column;
+		}
+		span.nav {
+			display: inline;
+		}
 	}
 </style>

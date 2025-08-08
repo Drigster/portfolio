@@ -45,6 +45,7 @@
 			copied = false;
 		}, 2000);
 	}
+	//	class="grid aspect-square h-screen grid-cols-3 grid-rows-3 gap-fixed-4 p-fixed-4 max-w-screen min-w-0 min-h-0 mx-auto text-clamp-lg"
 </script>
 
 <svelte:head>
@@ -52,29 +53,34 @@
 </svelte:head>
 
 <div
-	class="grid aspect-square h-[calc(100svh-0.25rem)] grid-cols-3 grid-rows-3 gap-4 p-4 max-w-screen min-w-0 min-h-0 mx-auto"
+	class="grid md2:aspect-square md2:h-svh md2:grid-cols-3 md2:grid-rows-3 gap-fixed-4 p-fixed-4 text-clamp-lg"
 >
-	<div class="min-h-72 md2:col-span-2 flex flex-col gap-4">
-		<div class="bg-bg border-border rounded-lg border px-2 pt-2">
-			<span class="text-text text-4xl">Gabriel Jõe</span>
-			<span class="text-text-muted">AKA</span>
-			<span class="text-text-muted text-2xl">Drigster</span>
+	<div class="md2:col-span-2 flex flex-col gap-fixed-4">
+		<div class="bg-bg border-border rounded-fixed-lg border p-fixed-2">
+			<span class="text-accent text-clamp-3xl">Gabriel Jõe</span>
+			<span class="text-text-muted text-clamp-sm">AKA</span>
+			<span class="text-text-muted text-clamp-2xl">Drigster</span>
 		</div>
 		<div
-			class="bg-bg border-border text-text-muted flex-1 rounded-lg border p-[10px] text-xl"
+			class="overflow-y-scroll overflow-x-hidden bg-bg border-border text-text-muted flex-1 rounded-fixed-lg border p-fixed-10px text-clamp-xl"
 		>
 			Hi I'm a computer science student and a backend developer who enjoys
-			working with TypeScript and Svelte. I run my own homelab and Minecraft
-			server, constantly exploring new technologies and improving my skills
-			through hands-on projects and real-world challenges.
+			working with <span class="text-accent">TypeScript</span> and
+			<span class="text-accent">Svelte</span>. I run my own
+			<span class="text-accent">homelab</span> and
+			<span class="text-accent">Minecraft</span> server, constantly exploring new
+			technologies and improving my skills through hands-on projects and real-world
+			challenges.
 		</div>
 	</div>
-	<div class="hidden md2:block bg-bg border-border relative rounded-lg border">
+	<div
+		class="overflow-y-scroll overflow-x-hidden hidden md2:block bg-bg border-border relative rounded-fixed-lg border"
+	>
 		<img class="rounded-[inherit]" src={drigster} alt="Avatar" />
 		<span
-			class="tooltip text-text-muted absolute bottom-0 right-0 cursor-help px-1"
+			class="tooltip text-text-muted absolute bottom-0 right-0 cursor-help px-fixed-1"
 		>
-			<span class="opacity-25">Why no real picture?</span>
+			<span class="opacity-25 text-clamp-sm">Why no real picture?</span>
 			<span class="tooltiptext">
 				I am quite privacy centerd. So I have very little personal information
 				online, including no pictures.
@@ -82,7 +88,7 @@
 		</span>
 	</div>
 	<div
-		class="tech-circle-container aspect-square md2:aspect-auto bg-bg border-border relative rounded-lg border p-[10px]"
+		class="tech-circle-container aspect-square md2:aspect-auto bg-bg border-border relative rounded-fixed-lg border p-fixed-10px"
 	>
 		<div class="tech-circle h-4/5 w-4/5">
 			<TechCircleItem id="svelte" items={8} position={1} icon={SvelteIcon} />
@@ -115,11 +121,11 @@
 			rating={4}
 			icon={SvelteIcon}
 		>
-			<span>Projects:</span>
+			<span class="text-text">Projects:</span>
 			<ul class="project-list">
 				<li>
 					<a
-						class="text-text hover:text-text-muted flex items-center gap-1"
+						class="text-text-muted hover:text-accent flex items-center gap-fixed-1"
 						href="/portfolio#foxytown"
 					>
 						Foxy.town<Link size="12" />
@@ -127,7 +133,7 @@
 				</li>
 				<li>
 					<a
-						class="text-text hover:text-text-muted flex items-center gap-1"
+						class="text-text-muted hover:text-accent flex items-center gap-fixed-1"
 						href="/portfolio#portfolio"
 					>
 						Portfolio<Link size="12" />
@@ -135,7 +141,7 @@
 				</li>
 				<li>
 					<a
-						class="text-text hover:text-text-muted flex items-center gap-1"
+						class="text-text-muted hover:text-accent flex items-center gap-fixed-1"
 						href="/portfolio#marmakc"
 					>
 						Marmakc.com<Link size="12" />
@@ -150,11 +156,11 @@
 			rating={4}
 			icon={TypeScriptIcon}
 		>
-			<span>Projects:</span>
+			<span class="text-text">Projects:</span>
 			<ul class="project-list">
 				<li>
 					<a
-						class="text-text hover:text-text-muted flex items-center gap-1"
+						class="text-text-muted hover:text-accent flex items-center gap-fixed-1"
 						href="/portfolio#foxytown"
 					>
 						Foxy.town<Link size="12" />
@@ -162,7 +168,7 @@
 				</li>
 				<li>
 					<a
-						class="text-text hover:text-text-muted flex items-center gap-1"
+						class="text-text-muted hover:text-accent flex items-center gap-fixed-1"
 						href="/portfolio#portfolio"
 					>
 						Portfolio<Link size="12" />
@@ -170,7 +176,7 @@
 				</li>
 				<li>
 					<a
-						class="text-text hover:text-text-muted flex items-center gap-1"
+						class="text-text-muted hover:text-accent flex items-center gap-fixed-1"
 						href="/portfolio#marmakc"
 					>
 						Marmakc.com<Link size="12" />
@@ -206,11 +212,11 @@
 			rating={4}
 			icon={CSharpIcon}
 		>
-			<span>Projects:</span>
+			<span class="text-text">Projects:</span>
 			<ul class="project-list">
 				<li>
 					<a
-						class="text-text hover:text-text-muted flex items-center gap-1"
+						class="text-text-muted hover:text-accent flex items-center gap-fixed-1"
 						href="https://github.com/drigster/projectphoenix/"
 					>
 						ProjectPhoenix<Link size="12" />
@@ -239,11 +245,11 @@
 			rating={5}
 			icon={GitIcon}
 		>
-			<span>Projects:</span>
+			<span class="text-text">Projects:</span>
 			<ul class="project-list">
 				<li>
 					<a
-						class="text-text hover:text-text-muted flex items-center gap-1"
+						class="text-text-muted hover:text-accent flex items-center gap-fixed-1"
 						href="https://github.com/drigster/"
 					>
 						See on github<Link size="12" />
@@ -259,7 +265,7 @@
 			icon={ProxmoxIcon}
 		>
 			<a
-				class="text-text hover:text-text-muted flex items-center gap-1"
+				class="text-text-muted hover:text-accent flex items-center gap-fixed-1"
 				href="/homelab"
 			>
 				View homelab page<Link size="12" />
@@ -267,105 +273,131 @@
 		</TechCircleItemStats>
 	</div>
 	<div
-		class="row-start-2 md2:row-start-auto min-h-72 bg-bg border-border flex flex-col gap-[10px] rounded-lg border p-[10px]"
+		class="row-start-2 md2:row-start-auto bg-bg border-border flex flex-col gap-[1vh] rounded-fixed-lg border p-fixed-10px"
 	>
-		<a
-			class="bg-bg-light grid flex-1 place-content-center rounded-lg text-center text-2xl hover:opacity-50"
-			href="/projects">Projects</a
-		>
-		<a
-			class="bg-bg-light grid flex-1 place-content-center rounded-lg text-center text-2xl hover:opacity-50"
-			href="/homelab"
-			><span class="line-through">Homelab</span><span
-				class="text-text-muted text-md">work in progress</span
-			></a
-		>
-		<a
-			class="bg-bg-light grid flex-1 place-content-center rounded-lg text-center text-2xl hover:opacity-50"
-			href="/cv">CV</a
-		>
+		<a class="flex-1" href="/projects">
+			<button
+				class="w-full h-full bg-bg-light place-content-center rounded-fixed-lg text-center text-clamp-2xl hover:bg-opacity-50 hover:text-accent"
+			>
+				Projects
+			</button>
+		</a>
+		<a class="flex-1" href="/homelab">
+			<button
+				class="w-full h-full bg-bg-light place-content-center rounded-fixed-lg text-center text-clamp-2xl hover:bg-opacity-50 hover:text-accent disabled:line-through disabled:bg-opacity-50"
+				disabled={true}
+			>
+				<span>Homelab</span>
+			</button>
+		</a>
+		<a class="flex-1" href="/cv">
+			<button
+				class="w-full h-full bg-bg-light place-content-center rounded-fixed-lg text-center text-clamp-2xl hover:bg-opacity-50 hover:text-accent"
+			>
+				CV
+			</button>
+		</a>
 	</div>
-	<div class="min-h-72 bg-bg border-border rounded-lg border p-[10px]"></div>
 	<div
-		class="min-h-72 bg-bg border-border grid gap-[10px] rounded-lg border p-[10px]"
+		class="bg-bg border-border rounded-fixed-lg border p-fixed-10px hidden md2:block"
+	></div>
+	<div
+		class="bg-bg border-border grid gap-[1vh] rounded-fixed-lg border p-fixed-10px"
 	>
-		<a
-			class="bg-bg-light text-1xl text-text flex items-center gap-1 rounded-lg px-2 pb-1 pt-2 text-center hover:opacity-50"
-			href="https://drigster.dev"
-			><House class="mb-1" size="26" /><span class="text-text-muted"
-				>drigster.dev</span
-			></a
-		>
+		<a href="https://drigster.dev">
+			<button
+				class="w-full h-full bg-bg-light text-clamp-lg text-text-muted flex items-center gap-fixed-1 rounded-fixed-lg px-fixed-2 pb-fixed-1 pt-fixed-2 text-center hover:bg-opacity-50 hover:text-accent"
+			>
+				<House class="mb-fixed-1 !w-font-clamp-lg !h-font-clamp-lg" />
+				<span>drigster.dev</span>
+			</button>
+		</a>
 		<span
-			class="bg-bg-light text-1xl text-text flex items-center gap-1 rounded-lg px-2 pb-1 pt-2 text-center"
-			><MapPin class="mb-1" size="26" /><span class="text-text-muted"
+			class="bg-bg-light text-clamp-lg text-text-muted flex items-center gap-fixed-1 rounded-fixed-lg px-fixed-2 pb-fixed-1 pt-fixed-2 text-center"
+			><MapPin class="mb-fixed-1 !w-font-clamp-lg !h-font-clamp-lg" /><span
 				>Tallinn, Estonia</span
 			></span
 		>
-		<span class="text-1xl flex items-center gap-2 text-center">
-			<a
-				class="bg-bg-light text-text flex h-full flex-1 items-center gap-1 rounded-lg px-2 pb-1 pt-2 hover:opacity-50"
-				href="mailto:me@drigster.dev"
-				><Mail class="mb-1" size="26" /><span class="text-text-muted"
-					>me@drigster.dev</span
-				></a
-			>
+		<span class="text-clamp-lg flex items-center gap-fixed-2 text-center">
+			<a class="flex-1 h-full" href="mailto:me@drigster.dev">
+				<button
+					class="text-text-muted text-ellipsis w-full h-full bg-bg-light text-clamp-lg flex items-center gap-fixed-1 rounded-fixed-lg px-fixed-2 pb-fixed-1 pt-fixed-2 text-center hover:bg-opacity-50 hover:text-accent"
+				>
+					<Mail class="mb-fixed-1 !w-font-clamp-lg !h-font-clamp-lg" />
+					<span style="font-size: clamp(1.15vh, 1.125rem, 2.12vh);"
+						>me@drigster.dev</span
+					>
+				</button>
+			</a>
 			<button
-				class="bg-bg-light text-text hidden aspect-square h-full place-content-center rounded-lg hover:opacity-50"
+				class="bg-bg-light text-text hidden aspect-square h-full place-content-center rounded-fixed-lg hover:bg-opacity-50 hover:text-accent"
 				onclick={() => copyEmail("me@drigster.dev")}
 				bind:this={copyEmailButton}
 			>
 				{#if !copied}
-					<Copy size="24" />
+					<Copy class="!w-[2.5vh] !h-[2.5vh]" />
 				{:else}
-					<Check size="24" />
+					<Check class="!w-[2.5vh] !h-[2.5vh]" />
 				{/if}
 			</button>
 		</span>
 		<a
-			class="bg-bg-light text-1xl text-text flex items-center gap-1 rounded-lg px-2 pb-1 pt-2 text-center hover:opacity-50"
+			class="bg-bg-light text-clamp-lg text-text-muted flex items-center gap-fixed-1 rounded-fixed-lg px-fixed-2 pb-fixed-1 pt-fixed-2 text-center hover:bg-opacity-50 hover:text-accent"
 			href="https://github.com/drigster"
-			><Github class="mb-1" size="26" /><span class="text-text-muted"
+			><Github class="mb-fixed-1 !w-font-clamp-lg !h-font-clamp-lg" /><span
 				>@drigster</span
 			></a
 		>
 		<a
-			class="bg-bg-light text-1xl text-text flex items-center gap-1 rounded-lg px-2 pb-1 pt-2 text-center hover:opacity-50"
+			class="bg-bg-light text-clamp-lg text-text-muted flex items-center gap-fixed-1 rounded-fixed-lg px-fixed-2 pb-fixed-1 pt-fixed-2 text-center hover:bg-opacity-50 hover:text-accent"
 			href="https://linkedin.com/in/drigster/"
-			><Linkedin class="mb-1" size="26" /><span class="text-text-muted"
+			><Linkedin class="mb-fixed-1 !w-font-clamp-lg !h-font-clamp-lg" /><span
 				>@drigster</span
 			></a
 		>
 	</div>
 	<div
-		class="row-start-5 md2:row-start-auto min-h-72 bg-bg border-border text-text-muted md2:col-span-2 flex flex-col gap-1 rounded-lg border p-[10px]"
+		class="overflow-y-scroll overflow-x-hidden row-start-5 md2:row-start-auto bg-bg border-border text-text-muted md2:col-span-2 flex flex-col gap-2 rounded-fixed-lg border p-fixed-10px"
 	>
-		<h3 class="text-text text-2xl">Education</h3>
+		<h3 class="text-text text-clamp-2xl">Education</h3>
 		<div class="flex items-center justify-between">
 			<div class="">
 				<div>
-					<Calendar class="inline" size="14" />
+					<Calendar
+						class="inline !w-font-clamp-lg !h-font-clamp-lg"
+						size="14"
+					/>
 					<span>2024 - 2027 (expected)</span>
 				</div>
 				<div>
-					<MapPin class="inline" size="14" />
-					<span>University of Tallin, Estonia</span>
+					<MapPin class="inline !w-font-clamp-lg !h-font-clamp-lg" />
+					<span
+						><a class="hover:text-accent" href="https://tlu.ee/"
+							>University of Tallinn</a
+						>, Estonia</span
+					>
 				</div>
 			</div>
-			<div class="text-text text-end">Bachelor’s in Computer Science</div>
+			<div class="text-text text-end">Bachelor’s in<br /> Computer Science</div>
 		</div>
 		<div class="flex items-center justify-between">
 			<div class="">
 				<div>
-					<Calendar class="inline" size="14" />
+					<Calendar class="inline !w-font-clamp-lg !h-font-clamp-lg" />
 					<span>2020 - 2024</span>
 				</div>
 				<div>
-					<MapPin class="inline" size="14" />
-					<span>Tallinna Polütehnikum, Estonia</span>
+					<MapPin class="inline !w-font-clamp-lg !h-font-clamp-lg" />
+					<span
+						><a class="hover:text-accent" href="https://tptlive.ee/"
+							>Tallinna Polütehnikum</a
+						>, Estonia</span
+					>
 				</div>
 			</div>
-			<div class="text-text text-end items">Junior Software Developer</div>
+			<div class="text-text text-end items">
+				Junior<br /> Software Developer
+			</div>
 		</div>
 	</div>
 </div>
@@ -411,22 +443,22 @@
 		display: flex;
 		flex-direction: column;
 		flex-wrap: wrap;
-		gap: 0.25rem;
+		gap: 0.425vh;
 	}
 	.project-list li {
 		display: flex;
 		align-items: center;
 		justify-items: center;
-		gap: 0.5rem;
-		margin-left: 0.25rem;
+		gap: 0.85vh;
+		margin-left: 0.425vh;
 		line-height: 1.2;
 	}
 
 	.project-list li::before {
 		content: "";
 		display: inline-block;
-		width: 0.25rem;
-		height: 0.25rem;
+		width: 0.425vh;
+		height: 0.425vh;
 		background-color: white;
 	}
 
@@ -434,10 +466,10 @@
 		visibility: hidden;
 		background-color: var(--background);
 		color: var(--text);
-		border-radius: 0.5rem;
+		border-radius: 0.85vh;
 		border: 1px solid var(--border);
 		text-align: center;
-		padding: 0.5rem;
+		padding: 0.85vh;
 		position: absolute;
 		z-index: 1;
 		bottom: 125%;
@@ -459,7 +491,7 @@
 		position: absolute;
 		left: 50%;
 		top: 50%;
-		border: 1px dashed var(--text-muted);
+		border: 0.1vh dashed var(--text-muted);
 		border-radius: 100%;
 		transform: translate(-50%, -50%);
 		animation: spin 30s linear infinite;

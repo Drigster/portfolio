@@ -14,16 +14,14 @@
 	} = $props();
 </script>
 
-<div>
-	<div
-		class="tech-circle-item pointer-events-none"
-		style="--deg: {(360 / items) * (position - 1)}deg;"
-	>
-		<label class="pointer-events-auto cursor-pointer">
-			<input {id} type="checkbox" hidden />
-			<Icon />
-		</label>
-	</div>
+<div
+	class="tech-circle-item pointer-events-none"
+	style="--deg: {(360 / items) * (position - 1)}deg;"
+>
+	<label class="pointer-events-auto cursor-pointer">
+		<input {id} type="checkbox" hidden />
+		<Icon size="4.4vh" />
+	</label>
 </div>
 
 <style>
@@ -37,7 +35,7 @@
 	@keyframes spin2 {
 		to {
 			--rot-deg: 360deg;
-			transform: translate(-1.5rem, -1.5rem)
+			transform: translate(-2.2vh, -2.2vh)
 				rotate(calc(-1 * var(--deg) + 360deg));
 		}
 	}
@@ -48,7 +46,7 @@
 		top: 50%;
 		transform-origin: 50% 50%;
 		animation: spin2 30s linear infinite reverse;
-		transform: translate(-1.5rem, -1.5rem) rotate(calc(-1 * var(--deg)));
+		transform: translate(-2.2vh, -2.2vh) rotate(calc(-1 * var(--deg)));
 	}
 
 	:global(.tech-circle.reverse .tech-circle-item label) {

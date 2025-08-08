@@ -4,13 +4,13 @@
 
 @layer base {
     :root {
-				--background-dark: #000000;
+				--background-dark: hsl(0 0 0);
 				--background: hsl(0 0 10);
-				--background-light: #262626;
-				--accent: #008B8B;
-				--text: #F2F2F2;
-				--text-muted: #BFBFBF;
-				--border: #262626;
+				--background-light: hsl(0 0% 15%);
+				--accent: hsl(180, 100%, 27%);
+				--text: hsl(0, 0%, 95%);
+				--text-muted: hsl(0, 0%, 70%);
+				--border: hsl(0, 0%, 15%);
     }
 }
 

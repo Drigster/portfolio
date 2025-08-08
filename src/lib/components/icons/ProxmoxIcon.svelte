@@ -1,10 +1,13 @@
+<script lang="ts">
+	let { size }: { size?: string } = $props();
+</script>
+
 <svg
 	xmlns="http://www.w3.org/2000/svg"
 	x="0px"
 	y="0px"
-	class="p-1"
-	height="48"
-	width="48"
+	height={size || 48}
+	width={size || 48}
 	viewBox="0 0 48 48"
 >
 	<path

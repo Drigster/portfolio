@@ -19,7 +19,7 @@
 	{#if title != undefined}
 		<span class="font-bold">{title}</span>
 	{/if}
-	<span class="flex items-center gap-1">
+	<span class="flex items-center" style="gap: calc({size} / 2);">
 		{#each Array(7) as _, i}
 			{#if i < rating}
 				<div

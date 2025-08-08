@@ -79,8 +79,9 @@
 			class="overflow-y-scroll overflow-x-hidden bg-bg border-border text-text-muted flex-1 rounded-fixed-lg border p-fixed-10px text-clamp-xl"
 		>
 			Hi I'm a computer science student and a backend developer who enjoys
-			working with <span class="text-accent">TypeScript</span> and
-			<span class="text-accent">Svelte</span>. I run my own
+			working with <span class="text-accent">TypeScript</span>,
+			<span class="text-accent">Svelte</span> and
+			<span class="text-accent">Rust</span>. I run my own
 			<span class="text-accent">homelab</span> and
 			<span class="text-accent">Minecraft</span> server, constantly exploring new
 			technologies and improving my skills through hands-on projects and real-world
@@ -143,7 +144,7 @@
 			id="svelte"
 			title="Svelte"
 			type="Framework"
-			rating={4}
+			rating={5}
 			icon={SvelteIcon}
 		>
 			<span class="text-text">Projects:</span>
@@ -181,7 +182,7 @@
 			id="typescript"
 			title="Typescript"
 			type="Language"
-			rating={4}
+			rating={5}
 			icon={TypeScriptIcon}
 		>
 			<span class="text-text">Projects:</span>

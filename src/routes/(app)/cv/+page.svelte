@@ -17,6 +17,7 @@
 	import Raiting from "$lib/components/Raiting.svelte";
 	import MainItem from "./MainItem.svelte";
 	import { page } from "$app/state";
+	import { Paintbrush } from "@o7/icon/lucide";
 
 	let theme: "dark" | "light" = $derived.by(() => {
 		let themeParam = page.url.searchParams.get("theme");
@@ -61,13 +62,29 @@
 	</div>
 	<span class="nav hidden border-t-2 border-bg-light"></span>
 	<div class="flex gap-2 nav">
-		<a href="/projects">
-			<button
-				class="w-full bg-bg-light py-2 px-4 rounded-lg text-xl hover:bg-opacity-50 hover:text-accent"
+		<div class="dropdown relative">
+			<label
+				class="w-full bg-bg-light py-2 px-4 rounded-lg text-xl flex items-center justify-center gap-0.5 dropdown cursor-pointer"
 			>
-				Projects
-			</button>
-		</a>
+				<input type="checkbox" hidden />
+				Theme
+				<Paintbrush class="inline" size="24" />
+			</label>
+			<div
+				class="dropdown-content text-lg text-center inset-x-0 rounded-b-lg bg-bg border border-border hidden absolute z-10 flex-col"
+			>
+				<a
+					class="py-2 px-4 border-t-2 border-bg bg-bg-light hover:bg-opacity-50"
+					class:text-accent={theme == "dark"}
+					href="?theme=dark">Dark</a
+				>
+				<a
+					class="py-2 px-4 border-t-2 border-bg bg-bg-light hover:bg-opacity-50"
+					class:text-accent={theme == "light"}
+					href="?theme=light">Light</a
+				>
+			</div>
+		</div>
 		<button
 			onclick={() => window.print()}
 			class="w-full bg-bg-light py-2 px-4 rounded-lg text-xl hover:bg-opacity-50 hover:text-accent flex items-center justify-center gap-0.5"
@@ -123,10 +140,10 @@
 									<Raiting title="HTML/CSS" rating={5} size={"1em"} />
 								</li>
 								<li>
-									<Raiting title="TypeScript" rating={4} size={"1em"} />
+									<Raiting title="TypeScript" rating={5} size={"1em"} />
 								</li>
 								<li>
-									<Raiting title="Svelte" rating={4} size={"1em"} />
+									<Raiting title="Svelte" rating={5} size={"1em"} />
 								</li>
 								<li>
 									<Raiting title="C#" rating={4} size={"1em"} />
@@ -135,7 +152,7 @@
 									<Raiting title="Python" rating={3} size={"1em"} />
 								</li>
 								<li>
-									<Raiting title="Rust" rating={2} size={"1em"} />
+									<Raiting title="Rust" rating={3} size={"1em"} />
 								</li>
 								<li>
 									<Raiting title="Java" rating={2} size={"1em"} />
@@ -166,10 +183,10 @@
 									<Raiting title="Git" rating={5} size={"1em"} />
 								</li>
 								<li>
-									<Raiting title="Docker" rating={2} size={"1em"} />
+									<Raiting title="Proxmox" rating={3} size={"1em"} />
 								</li>
 								<li>
-									<Raiting title="Proxmox" rating={3} size={"1em"} />
+									<Raiting title="Docker" rating={2} size={"1em"} />
 								</li>
 							</ul>
 						</div>
@@ -472,39 +489,14 @@
 		border-right: solid 1px black;
 	}
 
-	.dropdown {
-		padding: 0.5rem;
-		border-radius: 0.5rem;
-		position: relative;
-		display: inline-block;
+	.dropdown:hover,
+	.dropdown:has(*:hover) .dropdown,
+	.dropdown:has(input:checked) .dropdown {
+		border-radius: 0.5rem 0.5rem 0 0 !important;
 	}
 
-	.dropbtn {
-		cursor: pointer;
-		border-radius: 4px;
-	}
-
-	.dropdown-content {
-		border-radius: 0.5rem;
-		background-color: #1b1b1b;
-		border: #0b3948 1px solid;
-		display: none;
-		position: absolute;
-		z-index: 1;
-		flex-direction: column;
-	}
-
-	.dropdown-content a {
-		padding: 0.25rem;
-		border-radius: inherit;
-	}
-
-	.dropdown-content a:hover {
-		padding: 0.25rem;
-		background-color: #232b2e;
-	}
-
-	.dropdown:hover .dropdown-content {
+	.dropdown:hover .dropdown-content,
+	.dropdown:has(input:checked) .dropdown-content {
 		display: flex;
 	}
 
@@ -514,6 +506,11 @@
 		}
 		span.nav {
 			display: inline;
+		}
+
+		.dropdown:hover .dropdown-content,
+		.dropdown:has(input:checked) .dropdown-content {
+			position: static;
 		}
 	}
 </style>

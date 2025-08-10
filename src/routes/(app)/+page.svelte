@@ -517,8 +517,7 @@
 							target="_blank"
 						>
 							University of Tallinn
-						</a>
-						, Estonia
+						</a>, Estonia
 					</span>
 				</div>
 			</div>
@@ -539,8 +538,7 @@
 							target="_blank"
 						>
 							Tallinna Polütehnikum
-						</a>
-						, Estonia
+						</a>, Estonia
 					</span>
 				</div>
 			</div>

@@ -633,10 +633,12 @@
 		animation-direction: reverse;
 	}
 
-	@keyframes spin {
-		to {
-			--rot-deg: 360deg;
-			transform: translate(-50%, -50%) rotate(360deg);
+	@supports not (-webkit-line-clamp: 1) {
+		@keyframes spin {
+			to {
+				--rot-deg: 360deg;
+				transform: translate(-50%, -50%) rotate(360deg);
+			}
 		}
 	}
 </style>

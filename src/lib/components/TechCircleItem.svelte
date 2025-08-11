@@ -32,11 +32,13 @@
 		transform: rotate(var(--deg));
 	}
 
-	@keyframes spin2 {
-		to {
-			--rot-deg: 360deg;
-			transform: translate(-2.2vh, -2.2vh)
-				rotate(calc(-1 * var(--deg) + 360deg));
+	@supports not (-webkit-line-clamp: 1) {
+		@keyframes spin2 {
+			to {
+				--rot-deg: 360deg;
+				transform: translate(-2.2vh, -2.2vh)
+					rotate(calc(-1 * var(--deg) + 360deg));
+			}
 		}
 	}
 

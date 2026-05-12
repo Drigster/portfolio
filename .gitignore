@@ -97,3 +97,4 @@ prisma/temp.sql
 # .pnp.*
 
 build/
+.vercel

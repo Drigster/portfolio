@@ -32,7 +32,7 @@
 		transform: rotate(var(--deg));
 	}
 
-	@supports not (-webkit-line-clamp: 1) {
+	@supports not (-webkit-hyphens: none) {
 		@keyframes spin2 {
 			to {
 				--rot-deg: 360deg;

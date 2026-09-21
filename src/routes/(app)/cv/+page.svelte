@@ -18,6 +18,7 @@
 	import MainItem from "./MainItem.svelte";
 	import { page } from "$app/state";
 	import { Paintbrush } from "@o7/icon/lucide";
+	import { resolve } from "$app/paths";
 
 	let theme: "dark" | "light" = $derived.by(() => {
 		let themeParam = page.url.searchParams.get("theme");
@@ -34,60 +35,58 @@
 </svelte:head>
 
 <div
-	class="nav sticky flex gap-2 mt-4 p-2 rounded-lg justify-between bg-bg border border-border mx-auto mb-4 w-screen max-w-[900px]"
+	class="nav sticky mx-auto mb-4 mt-4 flex w-screen max-w-[900px] justify-between gap-2 rounded-lg border border-border bg-bg p-2"
 >
-	<div class="flex gap-2 nav">
-		<a href="/">
+	<div class="nav flex gap-2">
+		<a href={resolve("/")}>
 			<button
-				class="w-full bg-bg-light py-2 px-4 rounded-lg text-xl hover:bg-opacity-50 hover:text-accent"
+				class="w-full rounded-lg bg-bg-light px-4 py-2 text-xl hover:bg-opacity-50 hover:text-accent"
 			>
 				Home
 			</button>
 		</a>
-		<a href="/homelab">
+		<button
+			class="w-full rounded-lg bg-bg-light px-4 py-2 text-xl disabled:bg-opacity-50 disabled:line-through"
+			disabled
+		>
+			Homelab
+		</button>
+		<a href={resolve("/projects")}>
 			<button
-				class="w-full bg-bg-light py-2 px-4 rounded-lg text-xl disabled:line-through disabled:bg-opacity-50"
-				disabled
-			>
-				Homelab
-			</button>
-		</a>
-		<a href="/projects">
-			<button
-				class="w-full bg-bg-light py-2 px-4 rounded-lg text-xl hover:bg-opacity-50 hover:text-accent"
+				class="w-full rounded-lg bg-bg-light px-4 py-2 text-xl hover:bg-opacity-50 hover:text-accent"
 			>
 				Projects
 			</button>
 		</a>
 	</div>
 	<span class="nav hidden border-t-2 border-bg-light"></span>
-	<div class="flex gap-2 nav">
+	<div class="nav flex gap-2">
 		<div class="dropdown relative">
 			<label
-				class="w-full bg-bg-light py-2 px-4 rounded-lg text-xl flex items-center justify-center gap-0.5 dropdown cursor-pointer"
+				class="dropdown flex w-full cursor-pointer items-center justify-center gap-0.5 rounded-lg bg-bg-light px-4 py-2 text-xl"
 			>
 				<input type="checkbox" hidden />
 				Theme
 				<Paintbrush class="inline" size="24" />
 			</label>
 			<div
-				class="dropdown-content text-lg text-center inset-x-0 rounded-b-lg bg-bg border border-border hidden absolute z-10 flex-col"
+				class="dropdown-content absolute inset-x-0 z-10 hidden flex-col rounded-b-lg border border-border bg-bg text-center text-lg"
 			>
 				<a
-					class="py-2 px-4 border-t-2 border-bg bg-bg-light hover:bg-opacity-50"
+					class="border-t-2 border-bg bg-bg-light px-4 py-2 hover:bg-opacity-50"
 					class:text-accent={theme == "dark"}
-					href="?theme=dark">Dark</a
+					href={resolve("/cv?theme=dark")}>Dark</a
 				>
 				<a
-					class="py-2 px-4 border-t-2 border-bg bg-bg-light hover:bg-opacity-50"
+					class="border-t-2 border-bg bg-bg-light px-4 py-2 hover:bg-opacity-50"
 					class:text-accent={theme == "light"}
-					href="?theme=light">Light</a
+					href={resolve("/cv?theme=light")}>Light</a
 				>
 			</div>
 		</div>
 		<button
 			onclick={() => window.print()}
-			class="w-full bg-bg-light py-2 px-4 rounded-lg text-xl hover:bg-opacity-50 hover:text-accent flex items-center justify-center gap-0.5"
+			class="flex w-full items-center justify-center gap-0.5 rounded-lg bg-bg-light px-4 py-2 text-xl hover:bg-opacity-50 hover:text-accent"
 		>
 			<span>Print<noscript>(CTRL + P)</noscript></span>
 			<Printer class="inline" size="24" />
@@ -98,7 +97,7 @@
 	<div id="wrapper" class="max-w-[800px]">
 		<div
 			id="print-section"
-			class="flex sm:aspect-[210/297] h-full w-full flex-col shadow-xl {theme}"
+			class="flex h-full w-full flex-col shadow-xl sm:aspect-[210/297] {theme}"
 		>
 			<div class="head bg-[var(--color-2)] px-6 py-3 font-bold">
 				<h1 class="my-4 text-2xl uppercase">Gabriel Jõe</h1>
@@ -106,7 +105,7 @@
 					Computer Science Student, Programmer, Homelab Enthusiast
 				</p>
 			</div>
-			<div class="relative grid flex-1 min-h-0 sm:grid-cols-[1fr_2fr]">
+			<div class="relative grid min-h-0 flex-1 sm:grid-cols-[1fr_2fr]">
 				<div class="sidebar bg-[var(--color-1)] px-4 py-3 text-xs">
 					<SidebarItem title="Contact">
 						<ul class="text-xs">
@@ -137,28 +136,28 @@
 							<h3>Programming Languages</h3>
 							<ul>
 								<li>
-									<Raiting title="HTML/CSS" rating={5} size={"1em"} />
+									<Raiting title="HTML/CSS" rating={5} size="1em" />
 								</li>
 								<li>
-									<Raiting title="TypeScript" rating={5} size={"1em"} />
+									<Raiting title="TypeScript" rating={5} size="1em" />
 								</li>
 								<li>
-									<Raiting title="Svelte" rating={5} size={"1em"} />
+									<Raiting title="Svelte" rating={5} size="1em" />
 								</li>
 								<li>
-									<Raiting title="C#" rating={4} size={"1em"} />
+									<Raiting title="C#" rating={4} size="1em" />
 								</li>
 								<li>
-									<Raiting title="Python" rating={3} size={"1em"} />
+									<Raiting title="Python" rating={3} size="1em" />
 								</li>
 								<li>
-									<Raiting title="Rust" rating={3} size={"1em"} />
+									<Raiting title="Rust" rating={3} size="1em" />
 								</li>
 								<li>
-									<Raiting title="Java" rating={2} size={"1em"} />
+									<Raiting title="Java" rating={2} size="1em" />
 								</li>
 								<li>
-									<Raiting title="React" rating={1} size={"1em"} />
+									<Raiting title="React" rating={1} size="1em" />
 								</li>
 							</ul>
 						</div>
@@ -166,13 +165,13 @@
 							<h3>Operating Systems</h3>
 							<ul>
 								<li>
-									<Raiting title="Linux" rating={5} size={"1em"} />
+									<Raiting title="Linux" rating={5} size="1em" />
 								</li>
 								<li>
-									<Raiting title="Windows" rating={4} size={"1em"} />
+									<Raiting title="Windows" rating={4} size="1em" />
 								</li>
 								<li>
-									<Raiting title="MacOS" rating={0} size={"1em"} />
+									<Raiting title="MacOS" rating={0} size="1em" />
 								</li>
 							</ul>
 						</div>
@@ -180,13 +179,13 @@
 							<h3>Tools</h3>
 							<ul>
 								<li>
-									<Raiting title="Git" rating={5} size={"1em"} />
+									<Raiting title="Git" rating={5} size="1em" />
 								</li>
 								<li>
-									<Raiting title="Proxmox" rating={3} size={"1em"} />
+									<Raiting title="Proxmox" rating={3} size="1em" />
 								</li>
 								<li>
-									<Raiting title="Docker" rating={2} size={"1em"} />
+									<Raiting title="Docker" rating={2} size="1em" />
 								</li>
 							</ul>
 						</div>

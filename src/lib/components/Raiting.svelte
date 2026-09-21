@@ -2,7 +2,7 @@
 	let {
 		title,
 		rating,
-		size,
+		size: initialSize,
 		class: className,
 	}: {
 		title?: string;
@@ -10,9 +10,12 @@
 		size: string | number;
 		class?: string;
 	} = $props();
-	if (!Number.isNaN(Number(size))) {
-		size = size + "px";
-	}
+	let size = $derived.by(() => {
+		if (!Number.isNaN(Number(initialSize))) {
+			return initialSize + "px";
+		}
+		return initialSize;
+	});
 </script>
 
 <div class="{className} flex items-center justify-between gap-1">
@@ -20,7 +23,7 @@
 		<span class="font-bold">{title}</span>
 	{/if}
 	<span class="flex items-center" style="gap: calc({size} / 2);">
-		{#each Array(7) as _, i}
+		{#each Array(7) as _, i (i)}
 			{#if i < rating}
 				<div
 					style="height: {size}; width: calc({size} / 2);"

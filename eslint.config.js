@@ -1,14 +1,14 @@
-import globals from 'globals';
-import js from '@eslint/js';
-import prettier from 'eslint-plugin-prettier/recommended';
-import svelte from 'eslint-plugin-svelte';
-import ts from 'typescript-eslint';
+import globals from "globals";
+import js from "@eslint/js";
+import prettier from "eslint-plugin-prettier/recommended";
+import svelte from "eslint-plugin-svelte";
+import ts from "typescript-eslint";
 
 export default ts.config(
 	js.configs.recommended,
 	...ts.configs.recommended,
-	...svelte.configs['flat/recommended'],
-	...svelte.configs['flat/prettier'],
+	...svelte.configs["flat/recommended"],
+	...svelte.configs["flat/prettier"],
 	prettier,
 	{
 		languageOptions: {
@@ -19,7 +19,7 @@ export default ts.config(
 		},
 	},
 	{
-		files: ['**/*.cjs', '**/*.mjs'],
+		files: ["**/*.cjs", "**/*.mjs"],
 		languageOptions: {
 			globals: {
 				...globals.node,
@@ -27,7 +27,7 @@ export default ts.config(
 		},
 	},
 	{
-		files: ['**/*.svelte'],
+		files: ["**/*.svelte"],
 		languageOptions: {
 			parserOptions: {
 				parser: ts.parser,
@@ -36,20 +36,20 @@ export default ts.config(
 	},
 	{
 		rules: {
-			'@typescript-eslint/no-unused-vars': [
-				'warn',
+			"@typescript-eslint/no-unused-vars": [
+				"warn",
 				{
-					argsIgnorePattern: '^_',
-					caughtErrorsIgnorePattern: '^_',
-					varsIgnorePattern: '^_',
+					argsIgnorePattern: "^_",
+					caughtErrorsIgnorePattern: "^_",
+					varsIgnorePattern: "^_",
 				},
 			],
 		},
 	},
 	{
 		rules: {
-			'prettier/prettier': 'warn',
+			"prettier/prettier": "warn",
 		},
 	},
-	{ ignores: ['**/.svelte-kit', 'build/', 'dist/'] },
+	{ ignores: ["**/.svelte-kit", "build/", "dist/", "**/.vercel"] },
 );

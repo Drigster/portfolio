@@ -1,12 +1,18 @@
+<script>
+	import { resolve } from "$app/paths";
+</script>
+
 <header class="sticky z-50 flex w-full justify-end">
 	<nav class="navbar">
 		<ul class="nav-list">
-			<li class="nav-item"><a class="nav-link" href="/">home</a></li>
-			<li class="nav-item"><a class="nav-link" href="/homelab">homelab</a></li>
+			<li class="nav-item"><a class="nav-link" href={resolve("/")}>home</a></li>
 			<li class="nav-item">
-				<a class="nav-link" href="/projects">projects</a>
+				<a class="nav-link" href={resolve("/homelab")}>homelab</a>
 			</li>
-			<li class="nav-item"><a class="nav-link" href="/cv">cv</a></li>
+			<li class="nav-item">
+				<a class="nav-link" href={resolve("/projects")}>projects</a>
+			</li>
+			<li class="nav-item"><a class="nav-link" href={resolve("/cv")}>cv</a></li>
 		</ul>
 	</nav>
 </header>
@@ -33,7 +39,7 @@
 	}
 
 	.navbar .nav-item::after {
-		content: '';
+		content: "";
 		position: absolute;
 		inset-inline: 0;
 		inset-block-end: 0;

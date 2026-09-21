@@ -1,13 +1,9 @@
 <script lang="ts">
-	import type { Snippet } from 'svelte';
+	import type { Snippet } from "svelte";
 
 	const {
-		title,
-		learnMore,
 		children,
 	}: {
-		title: string;
-		learnMore: string;
 		children: Snippet;
 	} = $props();
 </script>

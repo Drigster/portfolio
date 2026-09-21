@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Component } from 'svelte';
+	import type { Component, Snippet } from "svelte";
 
 	let {
 		title,
@@ -8,7 +8,7 @@
 		icon,
 	}: {
 		title: string;
-		children: any;
+		children: Snippet;
 		class?: string;
 		icon?: Component;
 	} = $props();
@@ -20,7 +20,6 @@
 	<div
 		class="my-4 flex items-center gap-3 border-b border-[var(--text-color)] text-lg font-bold uppercase"
 	>
-		<!-- svelte-ignore element_invalid_self_closing_tag -->
 		{#if Icon != null}
 			<Icon size="24" />
 		{/if}

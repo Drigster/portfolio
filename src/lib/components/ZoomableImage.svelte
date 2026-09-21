@@ -9,12 +9,12 @@
 </script>
 
 <label
-	class="zoom-image modal w-full h-full overflow-hidden flex items-baseline justify-center"
+	class="zoom-image modal flex h-full w-full items-baseline justify-center overflow-hidden"
 	class:overflow-y-scroll={scrollable}
 >
 	<input class="modal-toggle absolute" type="checkbox" hidden />
 	<img class:object-contain={!scrollable} class:scrollable {src} {alt} />
-	<span class="close-button hidden absolute top-4 right-4">
+	<span class="close-button absolute right-4 top-4 hidden">
 		<X size={42} />
 	</span>
 </label>

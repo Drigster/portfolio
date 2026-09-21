@@ -1,13 +1,10 @@
 <script lang="ts">
 	import marmaks1 from "$lib/assets/marmaks1.png";
-	import marmaks2 from "$lib/assets/marmaks2.png";
-	import marmaks3 from "$lib/assets/marmaks3.png";
 	import foxytown1 from "$lib/assets/foxytown1.png";
-	import foxytown2 from "$lib/assets/foxytown2.png";
-	import foxytown3 from "$lib/assets/foxytown3.png";
 	import taskupeatus1 from "$lib/assets/taskupeatus1.jpg";
 	import portfolio1 from "$lib/assets/portfolio1.png";
 	import Project from "./Project.svelte";
+	import { resolve } from "$app/paths";
 </script>
 
 <svelte:head>
@@ -15,21 +12,22 @@
 </svelte:head>
 
 <div
-	class="sticky flex gap-2 mt-4 p-2 rounded-lg justify-center bg-bg border border-border mx-4"
+	class="sticky mx-4 mt-4 flex justify-center gap-2 rounded-lg border border-border bg-bg p-2"
 >
-	<a class="bg-bg-light py-2 px-4 rounded-lg text-xl hover:opacity-50" href="/"
-		>Home</a
+	<a
+		class="rounded-lg bg-bg-light px-4 py-2 text-xl hover:opacity-50"
+		href={resolve("/")}>Home</a
 	>
-	<span class="bg-bg-light py-2 px-4 rounded-lg text-xl line-through"
+	<span class="rounded-lg bg-bg-light px-4 py-2 text-xl line-through"
 		>Homelab</span
 	>
 	<a
-		class="bg-bg-light py-2 px-4 rounded-lg text-xl hover:opacity-50"
-		href="/cv">CV</a
+		class="rounded-lg bg-bg-light px-4 py-2 text-xl hover:opacity-50"
+		href={resolve("/cv")}>CV</a
 	>
 </div>
 <div
-	class="grid auto-rows-[max-content] md2:auto-rows-fr grid-cols-1 md:grid-cols-2 md2:grid-cols-1 content mx-auto gap-4 p-4"
+	class="content mx-auto grid auto-rows-[max-content] grid-cols-1 gap-4 p-4 md:grid-cols-2 md2:auto-rows-fr md2:grid-cols-1"
 >
 	<Project
 		id="taskupeatus"
@@ -39,7 +37,7 @@
 				arrives."
 		technologies={["Flutter"]}
 		image={taskupeatus1}
-		sourceUrl="https://github.com/drigster/taskupeatus"
+		sourceUrl="https://github.com/drigster/tasku_peatus"
 	/>
 	<Project
 		id="foxytown"

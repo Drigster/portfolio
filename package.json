@@ -10,17 +10,32 @@
 		"preview": "vite preview"
 	},
 	"packageManager": "pnpm@10.9.0",
-	"devDependencies": {
-		"@o7/icon": "^0.3.57",
-		"@sveltejs/adapter-vercel": "^6.3.3",
-		"@sveltejs/vite-plugin-svelte": "^7.1.2",
-		"autoprefixer": "^10.4.21",
-		"svelte": "^5.34.8",
-		"tailwindcss": "^3.4.17",
-		"vite": "^8.0.12"
-	},
 	"dependencies": {
-		"@sveltejs/adapter-node": "^5.2.12",
-		"@sveltejs/kit": "^2.22.0"
+		"@sveltejs/kit": "^2.70.3",
+		"postcss": "^8.5.28",
+		"postcss-load-config": "^6.0.1",
+		"prettier": "^3.9.8",
+		"prettier-plugin-svelte": "^4.1.1",
+		"prettier-plugin-tailwindcss": "^0.8.1",
+		"svelte-check": "^4.7.6"
+	},
+	"devDependencies": {
+		"@eslint/js": "^10.0.1",
+		"@o7/icon": "^0.3.98",
+		"@sveltejs/adapter-node": "^5.5.7",
+		"@sveltejs/adapter-vercel": "^6.3.4",
+		"@sveltejs/vite-plugin-svelte": "^7.3.0",
+		"@types/node": "^26.6.2",
+		"autoprefixer": "^10.6.1",
+		"eslint": "^10.11.0",
+		"eslint-config-prettier": "^10.1.8",
+		"eslint-plugin-prettier": "^5.5.6",
+		"eslint-plugin-svelte": "^3.23.0",
+		"globals": "^17.12.0",
+		"svelte": "^5.57.1",
+		"tailwindcss": "^3.4.19",
+		"typescript": "^6.0.3",
+		"typescript-eslint": "^8.70.1",
+		"vite": "^8.3.0"
 	}
 }

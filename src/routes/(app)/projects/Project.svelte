@@ -24,40 +24,42 @@
 
 <div
 	{id}
-	class="flex flex-col row-span-2 grid-rows-subgrid md:grid md:gap-0 md2:row-span-1 md2:grid-cols-2 md2:gap-4"
+	class="row-span-2 flex grid-rows-subgrid flex-col md:grid md:gap-0 md2:row-span-1 md2:grid-cols-2 md2:gap-4"
 >
 	<div
-		class="rounded-t-lg md2:rounded-lg aspect-[16/9] w-full h-full bg-bg border border-border"
+		class="aspect-[16/9] h-full w-full rounded-t-lg border border-border bg-bg md2:rounded-lg"
 	>
 		<ZoomableImage scrollable={imageScroll} src={image} alt="" />
 	</div>
 	<div
-		class="bg-bg border border-border p-4 rounded-b-lg md2:rounded-lg flex flex-col gap-3 md2:aspect-[16/9]"
+		class="flex flex-col gap-3 rounded-b-lg border border-border bg-bg p-4 md2:aspect-[16/9] md2:rounded-lg"
 	>
-		<h2 class="text-text text-3xl">{title}</h2>
-		<p class="text-text-muted flex-1 min-h-0 overflow-y-auto">
+		<h2 class="text-3xl text-text">{title}</h2>
+		<p class="min-h-0 flex-1 overflow-y-auto text-text-muted">
 			{description}
 		</p>
-		<div class="text-text-muted flex gap-1">
-			{#each technologies as technology}
-				<span class="bg-bg-light px-2 rounded-xl">{technology}</span>
+		<div class="flex gap-1 text-text-muted">
+			{#each technologies as technology (technology)}
+				<span class="rounded-xl bg-bg-light px-2">{technology}</span>
 			{/each}
 		</div>
-		<div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+		<div class="grid grid-cols-1 gap-2 md:grid-cols-2">
+			<!-- eslint-disable svelte/no-navigation-without-resolve -->
 			{#if url}
 				<a
-					class="bg-bg-light p-3 rounded-lg text-md hover:opacity-50 text-center"
+					class="text-md rounded-lg bg-bg-light p-3 text-center hover:opacity-50"
 					href={url}
 					target="_blank">View</a
 				>
 			{/if}
 			{#if sourceUrl}
 				<a
-					class="bg-bg-light p-3 rounded-lg text-md hover:opacity-50 text-center"
+					class="text-md rounded-lg bg-bg-light p-3 text-center hover:opacity-50"
 					href={sourceUrl}
 					target="_blank">Source</a
 				>
 			{/if}
+			<!-- eslint-enable svelte/no-navigation-without-resolve -->
 		</div>
 	</div>
 </div>

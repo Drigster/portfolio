@@ -343,6 +343,24 @@
 				<li>
 					<a
 						class="flex items-center gap-fixed-1 text-text-muted hover:text-accent"
+						href="https://github.com/drigster/tasku_peatus/"
+						target="_blank"
+					>
+						TaskuPeatus<Link size="12" />
+					</a>
+				</li>
+				<li>
+					<a
+						class="flex items-center gap-fixed-1 text-text-muted hover:text-accent"
+						href="https://github.com/Drigster/oxide_plus/"
+						target="_blank"
+					>
+						Oxide+<Link size="12" />
+					</a>
+				</li>
+				<li>
+					<a
+						class="flex items-center gap-fixed-1 text-text-muted hover:text-accent"
 						href="https://github.com/drigster/tidal-rs"
 						target="_blank"
 					>

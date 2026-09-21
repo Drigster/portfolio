@@ -95,10 +95,10 @@
 	</div>
 </div>
 <div class="cv flex flex-col items-center justify-center px-4 pb-4">
-	<div>
+	<div id="wrapper" class="max-w-[800px]">
 		<div
 			id="print-section"
-			class="flex aspect-[210/297] h-full w-[800px] flex-col shadow-xl {theme}"
+			class="flex sm:aspect-[210/297] h-full w-full flex-col shadow-xl {theme}"
 		>
 			<div class="head bg-[var(--color-2)] px-6 py-3 font-bold">
 				<h1 class="my-4 text-2xl uppercase">Gabriel Jõe</h1>
@@ -106,7 +106,7 @@
 					Computer Science Student, Programmer, Homelab Enthusiast
 				</p>
 			</div>
-			<div class="relative grid h-full grid-cols-[1fr_2fr]">
+			<div class="relative grid flex-1 min-h-0 sm:grid-cols-[1fr_2fr]">
 				<div class="sidebar bg-[var(--color-1)] px-4 py-3 text-xs">
 					<SidebarItem title="Contact">
 						<ul class="text-xs">
@@ -435,13 +435,6 @@
 							<div class="text-end">Junior Software Developer</div>
 						</div>
 					</MainItem>
-					<!-- <MainItem
-					class="flex flex-col gap-2"
-					title="Professional Experience"
-					icon={Briefcase}
-				>
-					<div class="text-xs">I hope you will be first ;)</div>
-				</MainItem> -->
 				</div>
 				<div class="absolute bottom-0 right-0 p-2 text-sm opacity-10">
 					Modified template by Diogo Correia <br />
@@ -487,6 +480,46 @@
 	}
 	#print-section.light .sidebar {
 		border-right: solid 1px black;
+	}
+
+	@media print {
+		.nav {
+			display: none !important;
+		}
+
+		.cv {
+			width: 210mm;
+			height: 297mm;
+			max-height: 297mm;
+			padding: 0 !important;
+			margin: 0 !important;
+			overflow: hidden;
+		}
+
+		#wrapper {
+			width: 210mm;
+			height: 297mm;
+			max-width: none !important;
+			margin: 0 !important;
+			padding: 0 !important;
+		}
+
+		#print-section {
+			width: 210mm;
+			height: 297mm;
+			max-height: 297mm;
+			aspect-ratio: auto;
+			box-shadow: none !important;
+			margin: 0 !important;
+			overflow: hidden;
+		}
+
+		#print-section .head,
+		#print-section .sidebar,
+		#print-section .content {
+			-webkit-print-color-adjust: exact;
+			print-color-adjust: exact;
+		}
 	}
 
 	.dropdown:hover,

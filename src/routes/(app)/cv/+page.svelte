@@ -223,10 +223,10 @@
 					>
 						<div>
 							<div class="flex items-center justify-between">
-								<a href="https://github.com/drigster/taskupeatus/">
+								<a href="https://github.com/drigster/tasku_peatus/">
 									<h3 class="text-md font-bold">
 										TaskuPeatus<span class="ml-1 text-[10px] opacity-30"
-											>https://github.com/drigster/taskupeatus/</span
+											>https://github.com/drigster/tasku_peatus/</span
 										>
 									</h3>
 								</a>
@@ -237,7 +237,7 @@
 									</div>
 									<div class="flex items-center gap-0.5">
 										<Cube class="inline" size="14" />
-										<span>Flutter</span>
+										<span>Rust; Freya</span>
 									</div>
 								</div>
 							</div>
@@ -278,6 +278,34 @@
 						</div>
 						<div>
 							<div class="flex items-center justify-between">
+								<a href="https://github.com/Drigster/oxide_plus/">
+									<h3 class="text-md font-bold">
+										Oxide+<span class="ml-1 text-[10px] opacity-30"
+											>https://github.com/Drigster/oxide_plus/</span
+										>
+									</h3>
+								</a>
+								<div class="text-xs">
+									<div class="flex items-center justify-end gap-0.5">
+										<Calendar class="inline" size="14" />
+										<span>2025</span>
+									</div>
+									<div class="flex items-center gap-0.5">
+										<Cube class="inline" size="14" />
+										<span>Rust;</span>
+										<span>Freya</span>
+									</div>
+								</div>
+							</div>
+							<p class="text-xs">
+								Oxide+ is a desktop port of Rust+ companion app for the game
+								Rust. It provides live server info, map visualization, team
+								tracking, minimap support, and a sleek desktop UI designed for
+								quick access and usability.
+							</p>
+						</div>
+						<div>
+							<div class="flex items-center justify-between">
 								<a href="https://github.com/drigster/projectphoenix/">
 									<h3 class="text-md font-bold">
 										ProjectPhoenix<span class="ml-1 text-[10px] opacity-30"
@@ -304,40 +332,6 @@
 								from a lack of motivation. Maybe I will revisit it in the
 								future.
 							</p>
-						</div>
-						<div>
-							<div class="flex items-center justify-between">
-								<h3 class="text-md font-bold">SecretProject</h3>
-								<div class="text-xs">
-									<div class="flex items-center justify-end gap-0.5">
-										<Calendar class="inline" size="14" />
-										<span>2025 - Present</span>
-									</div>
-									<div class="flex items-center gap-0.5">
-										<Cube class="inline" size="14" />
-										<span>Rust;</span>
-										<span>Freya</span>
-									</div>
-								</div>
-							</div>
-							<p class="text-xs"></p>
-						</div>
-						<div>
-							<div class="flex items-center justify-between">
-								<h3 class="text-md font-bold">SecretProject</h3>
-								<div class="text-xs">
-									<div class="flex items-center gap-0.5">
-										<Calendar class="inline" size="14" />
-										<span>2025 - Present</span>
-									</div>
-									<div class="flex items-center gap-0.5">
-										<Cube class="inline" size="14" />
-										<span>Svelte;</span>
-										<span>tRPC</span>
-									</div>
-								</div>
-							</div>
-							<p class="text-xs"></p>
 						</div>
 					</MainItem>
 					<MainItem

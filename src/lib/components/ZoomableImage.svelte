@@ -40,8 +40,10 @@
 
 	.zoom-image:has(> input:checked) {
 		position: fixed;
-		left: 0;
-		top: 0;
+		inset: 0;
+		z-index: 50;
+		width: 100vw;
+		height: 100dvh;
 		padding: auto;
 		cursor: zoom-out;
 		background-color: hsl(0 0 0 / 0.5);

@@ -4,6 +4,7 @@
 
 <script lang="ts">
 	import ZoomableImage from "$lib/components/ZoomableImage.svelte";
+	import { onMount } from "svelte";
 	import { ChevronLeft, ChevronRight } from "@o7/icon/lucide";
 
 	let { images }: { images: CarouselImage[] } = $props();
@@ -13,7 +14,7 @@
 	// Controls need JS, so they only render after hydration
 	let mounted = $state(false);
 
-	$effect(() => {
+	onMount(() => {
 		mounted = true;
 	});
 

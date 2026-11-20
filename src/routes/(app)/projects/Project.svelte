@@ -1,13 +1,12 @@
 <script lang="ts">
-	import ZoomableImage from "$lib/components/ZoomableImage.svelte";
+	import Carousel, { type CarouselImage } from "./Carousel.svelte";
 
 	let {
 		id,
 		title,
 		description,
 		technologies,
-		image,
-		imageScroll,
+		images,
 		url,
 		sourceUrl,
 	}: {
@@ -15,8 +14,7 @@
 		title: string;
 		description: string;
 		technologies: string[];
-		image: string;
-		imageScroll?: boolean;
+		images: CarouselImage[];
 		url?: string;
 		sourceUrl?: string;
 	} = $props();
@@ -45,7 +43,7 @@
 	<div
 		class="aspect-[16/9] h-full w-full rounded-t-lg border border-border bg-bg md2:rounded-lg"
 	>
-		<ZoomableImage scrollable={imageScroll} src={image} alt="" />
+		<Carousel {images} />
 	</div>
 	<div
 		class="flex flex-col gap-3 rounded-b-lg border border-border bg-bg p-4 md2:aspect-[16/9] md2:rounded-lg"

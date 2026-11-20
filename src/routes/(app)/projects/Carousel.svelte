@@ -47,14 +47,14 @@
 
 	{#if mounted && images.length > 1}
 		<button
-			class="control absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-bg/70 p-1 text-text hover:bg-bg"
+			class="control arrow absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-bg/70 p-1 text-text hover:bg-bg"
 			aria-label="Previous image"
 			onclick={() => goTo(current - 1)}
 		>
 			<ChevronLeft size={24} />
 		</button>
 		<button
-			class="control absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-bg/70 p-1 text-text hover:bg-bg"
+			class="control arrow absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-bg/70 p-1 text-text hover:bg-bg"
 			aria-label="Next image"
 			onclick={() => goTo(current + 1)}
 		>
@@ -95,6 +95,13 @@
 
 	.track.js::-webkit-scrollbar {
 		display: none;
+	}
+
+	/* Invisible hit area around the arrows, easier to tap on phones */
+	.arrow::before {
+		content: "";
+		position: absolute;
+		inset: -1.25rem -1rem;
 	}
 
 	.control {

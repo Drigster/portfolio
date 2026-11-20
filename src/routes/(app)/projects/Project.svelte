@@ -20,6 +20,22 @@
 		url?: string;
 		sourceUrl?: string;
 	} = $props();
+
+	let descriptionEl = $state<HTMLParagraphElement>();
+	let hasMore = $state(false);
+
+	function updateFade() {
+		if (!descriptionEl) return;
+		const { scrollTop, scrollHeight, clientHeight } = descriptionEl;
+		hasMore = scrollHeight - scrollTop - clientHeight > 1;
+	}
+
+	$effect(() => {
+		if (!descriptionEl) return;
+		const observer = new ResizeObserver(updateFade);
+		observer.observe(descriptionEl);
+		return () => observer.disconnect();
+	});
 </script>
 
 <div
@@ -35,12 +51,17 @@
 		class="flex flex-col gap-3 rounded-b-lg border border-border bg-bg p-4 md2:aspect-[16/9] md2:rounded-lg"
 	>
 		<h2 class="text-3xl text-text">{title}</h2>
-		<p class="min-h-0 flex-1 overflow-y-auto text-text-muted">
+		<p
+			bind:this={descriptionEl}
+			onscroll={updateFade}
+			class:fade={hasMore}
+			class="-my-1 min-h-0 flex-1 overflow-y-auto text-text-muted"
+		>
 			{description}
 		</p>
-		<div class="flex gap-1 text-text-muted">
+		<div class="flex flex-wrap gap-1 text-xs text-text-muted">
 			{#each technologies as technology (technology)}
-				<span class="rounded-xl bg-bg-light px-2">{technology}</span>
+				<span class="rounded-lg bg-bg-light px-1.5 py-0.5">{technology}</span>
 			{/each}
 		</div>
 		<div class="grid grid-cols-1 gap-2 md:grid-cols-2">
@@ -63,3 +84,13 @@
 		</div>
 	</div>
 </div>
+
+<style>
+	.fade {
+		mask-image: linear-gradient(
+			to bottom,
+			black calc(100% - 2.5em),
+			transparent
+		);
+	}
+</style>

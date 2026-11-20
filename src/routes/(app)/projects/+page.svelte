@@ -12,7 +12,7 @@
 </svelte:head>
 
 <div
-	class="sticky mx-4 mt-4 flex justify-center gap-2 rounded-lg border border-border bg-bg p-2"
+	class="sticky mx-auto mt-4 flex w-[calc(100vw-2rem)] max-w-[968px] justify-center gap-2 rounded-lg border border-border bg-bg p-2"
 >
 	<a
 		class="rounded-lg bg-bg-light px-4 py-2 text-xl hover:opacity-50"
@@ -27,25 +27,20 @@
 	>
 </div>
 <div
-	class="content mx-auto grid auto-rows-[max-content] grid-cols-1 gap-4 p-4 md:grid-cols-2 md2:auto-rows-fr md2:grid-cols-1"
+	class="content mx-auto grid w-screen max-w-[1000px] auto-rows-[max-content] grid-cols-1 gap-4 p-4 md:grid-cols-2 md2:auto-rows-fr md2:grid-cols-1"
 >
 	<Project
 		id="taskupeatus"
 		title="TaskuPeatus"
-		description="TaskuPeats is a phone app for public transport users in Tallinn. It uses
-				GPS and public APIs to show users when transport on the closest stops
-				arrives."
-		technologies={["Flutter"]}
+		description="TaskuPeatus is a phone app for public transport users in Tallinn. It uses GPS and public APIs to show when transport arrives at the nearest stops."
+		technologies={["Rust", "Freya"]}
 		image={taskupeatus1}
 		sourceUrl="https://github.com/drigster/tasku_peatus"
 	/>
 	<Project
 		id="foxytown"
 		title="foxy.town"
-		description="Foxy.town is a website for my minecraft. It has user registration and
-				managment, allowing users to change all the info about theit character.
-				And advanced admin dashboard that allows editing all info about servers
-				and launcher;"
+		description="Foxy.town is the website for my Minecraft server. Players can register and manage everything about their character, and an advanced admin dashboard allows editing all server and launcher info."
 		technologies={["SvelteKit", "TypeScript", "Turso"]}
 		image={foxytown1}
 		url="https://foxy.town"
@@ -53,7 +48,7 @@
 	/>
 	<Project
 		id="portfolio"
-		title="Protfolio"
+		title="Portfolio"
 		description="This website."
 		technologies={["SvelteKit", "TypeScript"]}
 		image={portfolio1}
@@ -63,8 +58,7 @@
 	<Project
 		id="marmakc"
 		title="Marmakc.com"
-		description="Website for a electrical panel manufacturing company. Has a simple admin
-				panel that allows adding products and changing contact information."
+		description="Website for an electrical panel manufacturing company, with a simple admin panel for adding products and updating contact information."
 		technologies={["SvelteKit", "TypeScript", "Drizzle"]}
 		image={marmaks1}
 		imageScroll={true}
@@ -72,9 +66,3 @@
 		sourceUrl="https://github.com/drigster/marmaks"
 	/>
 </div>
-
-<style>
-	.content {
-		max-width: 1000px;
-	}
-</style>

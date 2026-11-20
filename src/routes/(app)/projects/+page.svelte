@@ -1,8 +1,9 @@
 <script lang="ts">
-	import marmaks1 from "$lib/assets/marmaks1.png";
-	import foxytown1 from "$lib/assets/foxytown1.png";
-	import taskupeatus1 from "$lib/assets/taskupeatus1.jpg";
-	import portfolio1 from "$lib/assets/portfolio1.png";
+	import marmaks1 from "$lib/assets/marmaks1.webp";
+	import foxytown1 from "$lib/assets/foxytown1.webp";
+	import taskupeatus1 from "$lib/assets/taskupeatus1.webp";
+	import portfolio1 from "$lib/assets/portfolio1.webp";
+	import tallquiz1 from "$lib/assets/tallquiz1.webp";
 	import Project from "./Project.svelte";
 	import { resolve } from "$app/paths";
 </script>
@@ -29,6 +30,15 @@
 <div
 	class="content mx-auto grid w-screen max-w-[1000px] auto-rows-[max-content] grid-cols-1 gap-4 p-4 md:grid-cols-2 md2:auto-rows-fr md2:grid-cols-1"
 >
+	<Project
+		id="tallquiz"
+		title="TallQuiz"
+		description="A quiz app for exploring Tallinn's Old Town. Landmarks are placed on a 3D map, each with its own quiz, hints and score. Includes accounts, an admin dashboard with answer statistics, and Stripe payments for access."
+		technologies={["SvelteKit", "TypeScript", "Turso", "MapLibre"]}
+		image={tallquiz1}
+		imageScroll={true}
+		url="https://tallquiz.vercel.app"
+	/>
 	<Project
 		id="taskupeatus"
 		title="TaskuPeatus"

@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { resolve } from "$app/paths";
-	import rack from "$lib/assets/rack.png";
-	import router from "$lib/assets/router.png";
-	import server from "$lib/assets/server.png";
+	import rack from "$lib/assets/rack.webp";
+	import router from "$lib/assets/router.webp";
+	import server from "$lib/assets/server.webp";
 </script>
 
 <svelte:head>

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import drigster from "$lib/assets/Drigster.png";
+	import drigster from "$lib/assets/Drigster.webp";
 	import {
 		Check,
 		Copy,

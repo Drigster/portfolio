@@ -11,6 +11,7 @@
 		Square3Stack3d,
 		Cube,
 		Printer,
+		WrenchScrewdriver,
 	} from "@o7/icon/heroicons/solid";
 	import { Github, LinkedinBox } from "@o7/icon/remix/solid";
 	import SidebarItem from "./SidebarItem.svelte";
@@ -102,7 +103,7 @@
 			<div class="head bg-[var(--color-2)] px-6 py-3 font-bold">
 				<h1 class="my-4 text-2xl uppercase">Gabriel Jõe</h1>
 				<p class="my-3 text-xs">
-					Computer Science Student, Programmer, Homelab Enthusiast
+					Backend Developer, Computer Science Student, Homelab Enthusiast
 				</p>
 			</div>
 			<div class="relative grid min-h-0 flex-1 sm:grid-cols-[1fr_2fr]">
@@ -140,6 +141,9 @@
 								</li>
 								<li>
 									<Raiting title="TypeScript" rating={5} size="1em" />
+								</li>
+								<li>
+									<Raiting title="JavaScript/Node.js" rating={5} size="1em" />
 								</li>
 								<li>
 									<Raiting title="Svelte" rating={5} size="1em" />
@@ -187,6 +191,12 @@
 								<li>
 									<Raiting title="Docker" rating={2} size="1em" />
 								</li>
+								<li>
+									<Raiting title="MySQL" rating={3} size="1em" />
+								</li>
+								<li>
+									<Raiting title="Claude Code" rating={3} size="1em" />
+								</li>
 							</ul>
 						</div>
 						<div>
@@ -207,10 +217,17 @@
 								<li>
 									<div class="flex items-center justify-between gap-1">
 										<span class="font-bold">Estonian</span>
-										<span>B2</span>
+										<span>C1</span>
 									</div>
 								</li>
 							</ul>
+						</div>
+						<div>
+							<h3>Other</h3>
+							<div class="flex items-center justify-between gap-1">
+								<span class="font-bold">Driving Licence</span>
+								<span>Category B</span>
+							</div>
 						</div>
 					</SidebarItem>
 				</div>
@@ -409,7 +426,7 @@
 								</div>
 								<div>
 									<MapPin class="inline" size="14" />
-									<span>University of Tallin, Estonia</span>
+									<span>Tallinn University, Estonia</span>
 								</div>
 							</div>
 							<div class="text-end">Bachelor’s in Computer Science</div>
@@ -426,6 +443,27 @@
 								</div>
 							</div>
 							<div class="text-end">Junior Software Developer</div>
+						</div>
+					</MainItem>
+					<MainItem
+						class="flex flex-col gap-2"
+						title="Hobbies"
+						icon={WrenchScrewdriver}
+					>
+						<div>
+							<div class="flex items-center justify-between">
+								<h3 class="text-md font-bold">Radio Electronics Club</h3>
+								<div class="text-xs">
+									<div class="flex items-center justify-end gap-0.5">
+										<Calendar class="inline" size="14" />
+										<span>10 years</span>
+									</div>
+								</div>
+							</div>
+							<p class="text-xs">
+								Spent 10 years in a radio electronics hobby club, building and
+								repairing electronic circuits and devices.
+							</p>
 						</div>
 					</MainItem>
 				</div>
